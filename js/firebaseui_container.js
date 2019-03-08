@@ -28,12 +28,9 @@
         //firebase.auth.PhoneAuthProvider.PROVIDER_ID
       ],
       // Terms of service url.
-      tosUrl: 'main.html',
+      tosUrl: 'tos.html',
       // Privacy policy url.
-      privacyPolicyUrl: 'main.html',
-        
-      accountChooserEnabled: false
-
+      privacyPolicyUrl: 'privacy.html',
     };
     
     // The start method will wait until the DOM is loaded.
