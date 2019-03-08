@@ -3,10 +3,23 @@
     <head>
         <meta charset="utf-8">
         <title>ZapShare</title>
+        <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+        <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
         <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
     </head>
 
-    <body>
+    <body>  
+            <!------------------------------------------------------
+            ------------------  Sets up FireBase  ------------------
+            ------------------------------------------------------->
+            <script src="js/setup_firebase.js"></script>
+        
+        
+            <!------------------------------------------------------
+            ----------- Header Section Including the Nav Bar  ------
+            ------------------------------------------------------->
+            <header>
             <div class="wrapper">
                 <div><a href="index.html"><img src="images/logo.png" id="logo" alt="logo"></a></div>
             <nav>
@@ -18,18 +31,27 @@
                 </ul>
             </nav>
             </div>
-                
+            </header>    
+            
+        
+            <!------------------------------------------------------
+            ---------- Main Section - Contents of the Page ---------
+            ------------------------------------------------------->
             <main>
                 <div id="summary-background">
+                    <img src="images/adoption.jpg" id="adoption-image" alt="logo">
                     <div id="summary-text">
-                        <img src="images/adoption.jpg" id="adoption-image" alt="logo">
                         <div id="summary-lines">
-                        Accelerating <span id="adoption">electric vehicle adoption</span> by increasing charger availability anytime, anywhere. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        Our vision is to increase <span id="adoption">electric vehicle adoption</span> by improving charger availability anytime, anywhere. We offer a peer-to-peer network and map of private chargers in the city. To find a charger near you, visit our Map page and search a location. To offer your private charger as a service on our network, please sign-up with an account.
                         </div>
                     </div>
                 </div>
             </main>
-                
+            
+        
+            <!------------------------------------------------------
+            ---------- Footer Section - Links to Subpages ----------
+            ------------------------------------------------------->
             <footer>
                 <div class="footerfourcolumns">
                     <div class="footercolumn">
