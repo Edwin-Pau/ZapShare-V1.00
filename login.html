@@ -1,21 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>ZapShare - Map</title>
-        <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
-        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
-        <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
-    </head>
-
-    <body>
+<html>   
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ZapShare - Login</title>
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>    
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
+</head>
+<body>
             <!------------------------------------------------------
             ------------------  Sets up FireBase  ------------------
             ------------------------------------------------------->
             <script src="js/setup_firebase.js"></script>
         
         
+            <!------------------------------------------------------
+            --------  Sets up FireBaseUI Login Container  ----------
+            ------------------------------------------------------->
+            <script src="js/firebaseui_container.js"></script>
+    
+      
             <!------------------------------------------------------
             ----------- Header Section Including the Nav Bar  ------
             ------------------------------------------------------->
@@ -26,7 +31,7 @@
                 <ul>
                     <li><a class="navnotcurrent" href="index.html">Home</a></li>
                     <li><a class="navnotcurrent" href="about.html">About</a></li>
-                    <li><a class="navcurrent" href="map.html">Map</a></li>
+                    <li><a class="navnotcurrent" href="map.html">Map</a></li>
                     <li><a class="navnotcurrent" href="contact.html">Contact</a></li>
                 </ul>
             </nav>
@@ -39,12 +44,8 @@
             ------------------------------------------------------->
             <main>
                 <div id="summary-background">
-                    <img src="images/adoption.jpg" id="adoption-image" alt="logo">
-                    <div id="summary-text">
-                        <div id="summary-lines">
-                        Our vision is to increase <span id="adoption">electric vehicle adoption</span> by improving charger availability anytime, anywhere. We offer a peer-to-peer network and map of private chargers in the city. To find a charger near you, visit our Map page and search a location. To offer your private charger as a service on our network, please sign-up with an account.
-                        </div>
-                    </div>
+                    <div id="firebaseui-auth-container"></div>
+                    <div id="loader">Loading...</div>
                 </div>
             </main>
             
@@ -91,5 +92,7 @@
                     <br>
                     &copy; 2019 ZapShare, All Rights Reserved.</div>
             </footer>
-    </body>   
+</body>
 </html>
+
+
