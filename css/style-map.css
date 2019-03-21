@@ -36,8 +36,11 @@
     box-shadow: 2px 0 3px -1px black;
 }
 #search-bar-transform {
+    position: relative;
     text-align: center;
+    top: 10%;
 }
 #search-bar {
     position: relative;
+    width: 65%;
 }
