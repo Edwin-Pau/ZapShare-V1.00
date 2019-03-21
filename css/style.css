@@ -1,4 +1,4 @@
-/* ---------------------- Header and Logo Style -------------- */
+/* ------------------------ Header and Logo Style ---------------------- */
 header {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -52,114 +52,17 @@ body {
     font-family: Roboto, sans-serif;
 }
 
-.maintext {
-    bottom: 60px;
-    background: rgb(0, 0, 0);
-    background: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    text-align: center;
-    width: 700px;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-}
-
-.maintext h1 {
-    font-size: 30px;
-    color: #f1f1f1;
-}
-
-.maintext a {
-    color: #f1f1f1;
-    text-decoration: none;
-    font-size: 15px;
-}
-
-.maintext a:hover {
-    color: #32CD32;
-    text-decoration: none;
-    font-size: 15px;
-}
-
-#contactusleft {
-    width: 100%;
-    margin: 0 auto;
-}
-
-#contactpin {
-    margin-right: 50px;
-    width: 100px;
-    float: left;
-    overflow: hidden;
-}
-
-#contactuswrapper {
-    text-shadow: 1px 1px #aaa;
-    color: #555;
-    letter-spacing: 1px;
-    margin-top: 70px;
-}
-
-#contactusright {
-    width: 100%;
-    margin: 0 auto;
-}
-
-.textpagewrapper {
-    width: 65%;
-    margin: 0 auto;
-    color: #4d4d4d;
-    background-color: #f6f6f6;
-    margin-top: -5px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 10px 40px 0 rgba(0, 0, 0, 0.19);
-    padding: 25px;
-}
-
-tr:nth-child(even) {
-    background-color: #dcdcdc;
-}
-
-tr:nth-child(odd) {
-    background-color: #f8f8f8;
-}
-
-.table a:active .table a:visited .table a:link {
-    color: #333;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-.table a:hover {
-    color: #C51E2C;
-}
-
-.source {
-    margin: 0 auto;
-    padding-bottom: 20px;
-    width: 700px;
-}
-
-.sitemap {
-    margin: 20px 0 auto;
-}
-
-#sitemapimage {
-    height: 100%;
-    width: 100%;
-}
-    /* ---------------------- Nav Style -------------------------- */
+    /* -------------------------- Nav Style -------------------------- */
 nav {
     float: left;
     margin-left: 20%;
-    margin-top: -80px;
+    margin-top: -85px;
 }
 
 nav .navcurrent {
     color: #32CD32;
     padding-bottom: 30px;
-    border-bottom: 4px solid #32CD32;
+    border-bottom: 5px solid #32CD32;
 }
 
 nav ul li {
@@ -180,11 +83,10 @@ nav a:hover {
     color: #32CD32;
     padding-bottom: 30px;
     padding-top: 65px;
-    border-bottom: 4px solid #32CD32;
+    border-bottom: 5px solid #32CD32;
     transition-duration: 0.2s;
     cursor:pointer;
 }
-
 /* ---------------------- ID Style -------------------------- */
 .wrapper {
     width: 75%;
@@ -211,7 +113,8 @@ nav a:hover {
     width: 75%;
     text-align: center;
     margin: 0 auto;
-    padding-bottom: 50px;
+    padding-top: 20px;
+    padding-bottom: 30px;
 }
 
 #adoption {
@@ -220,17 +123,21 @@ nav a:hover {
 
 #summary-lines {
     padding-top: 40px;
+    padding-bottom: 40px;
+    border-top: 2px solid #32CD32;
+    border-bottom: 2px solid #32CD32;
 }
 
 #adoption-image {
     width: 100%;
     height: auto;
 }
-
-
-
 /* ---------------------- Grid Layout ----------------------- */
-
+#firebaseui-auth-container {
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
 .twocolumns {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -270,7 +177,7 @@ nav a:hover {
     font-weight: bold;
 }
 
-/* ---------------------------- Form Styling -------------------------------- */
+/* ---------------------------- Form Styling -------------------------- */
 .labelcol {
     width: 90px;
     font-weight: bold
@@ -346,11 +253,12 @@ legend {
     font-size: 18px;
 }
 
-/* ---------------------- Footer Style -------------------------- */
+/* ------------------------- Footer Style ----------------------------- */
 footer {
     line-height: 22px;
     background-color: #444;
     box-shadow: 4px -15px 8px -15px rgba(0, 0, 0, 0.2), 10px -15px 40px -15px rgba(0, 0, 0, 0.19);
+    border-top: 4px solid #32CD32;
 }
 
 footer a {

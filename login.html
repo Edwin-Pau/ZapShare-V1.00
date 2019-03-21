@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>ZapShare</title>
-        <link rel="stylesheet" type="text/css" media="screen" href="css/style-map.css">
-        <title>ZapShare - Map</title>
-        <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
-        <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
-        <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
-    </head>
-
-    <body>
+<html>   
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ZapShare - Login</title>
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>    
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
+</head>
+<body>
             <!------------------------------------------------------
             ------------------  Sets up FireBase  ------------------
             ------------------------------------------------------->
             <script src="js/setup_firebase.js"></script>
         
         
+            <!------------------------------------------------------
+            --------  Sets up FireBaseUI Login Container  ----------
+            ------------------------------------------------------->
+            <script src="js/firebaseui_container.js"></script>
+    
+      
             <!------------------------------------------------------
             ----------- Header Section Including the Nav Bar  ------
             ------------------------------------------------------->
@@ -28,7 +31,7 @@
                 <ul>
                     <li><a class="navnotcurrent" href="index.html">Home</a></li>
                     <li><a class="navnotcurrent" href="about.html">About</a></li>
-                    <li><a class="navcurrent" href="map.html">Map</a></li>
+                    <li><a class="navnotcurrent" href="map.html">Map</a></li>
                     <li><a class="navnotcurrent" href="contact.html">Contact</a></li>
                 </ul>
             </nav>
@@ -40,19 +43,9 @@
             ---------- Main Section - Contents of the Page ---------
             ------------------------------------------------------->
             <main>
-                <div id="map-interface">
-                    <div id="map-transform">
-                        <div id="map-widget-shadow">
-                            <div id="map-widget">
-                                <div id="search-bar-transform">
-                                    <input type="text" placeholder="Search.." id="search-bar">
-                                </div>
-                            </div>
-                        </div>
-                        <div id="map-temp">
-                            map
-                        </div>
-                    </div>
+                <div id="summary-background">
+                    <div id="firebaseui-auth-container"></div>
+                    <div id="loader">Loading...</div>
                 </div>
             </main>
             
@@ -99,5 +92,7 @@
                     <br>
                     &copy; 2019 ZapShare, All Rights Reserved.</div>
             </footer>
-    </body>   
+</body>
 </html>
+
+
