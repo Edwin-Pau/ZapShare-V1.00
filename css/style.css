@@ -13,6 +13,10 @@ header {
     border-top: 15px solid #32CD32;
     margin-top: 0;
     padding-top: 0;
+    position: fixed;
+    top: 0;
+    background-color: white;
+    width: 100%;
 }
 
 #logo {
@@ -115,7 +119,7 @@ nav a:hover {
 
 
 #summary-background {
-    margin-top: -4px;
+    margin-top: 12vh;
     width: 100%;
     font-size: 24px;
     line-height: 35px;
