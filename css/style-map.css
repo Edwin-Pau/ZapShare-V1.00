@@ -16,7 +16,6 @@
     margin: 0 auto;
     width: 100%;
     height: 100%;
-    background-color: hotpink;
 }
 #map-widget {
     position: absolute;
@@ -42,9 +41,12 @@
     position: relative;
     width: 70%;
     font-size: 16pt;
-    border-radius: 7px;
+    border-radius: 9px;
     border: 2px solid #32CD32;
     background-color: #e0eeee;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0 11px 0 13px;
 }
 #search-text-transform {
     position: relative;
