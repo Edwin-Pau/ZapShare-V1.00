@@ -2,25 +2,29 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>ZapShare</title>
         <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
         <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
         <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
         <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
-    </head>
-
-    <body>  
             <!------------------------------------------------------
             ------------------  Sets up FireBase  ------------------
             ------------------------------------------------------->
             <script src="js/setup_firebase.js"></script>
         
-        
+            <!------------------------------------------------------
+            ----------------  Sets up Sticky Nav Bar  --------------
+            ------------------------------------------------------->
+            <!-- <script src="js/sticky_navbar.js"></script> -->
+    </head>
+
+    <body>  
             <!------------------------------------------------------
             ----------- Header Section Including the Nav Bar  ------
             ------------------------------------------------------->
             <header>
-            <div class="wrapper">
+            <div id="navbar">
                 <div><a href="index.html"><img src="images/logo.png" id="logo" alt="logo"></a></div>
             <nav>
                 <ul>
@@ -28,6 +32,7 @@
                     <li><a class="navnotcurrent" href="about.html">About</a></li>
                     <li><a class="navnotcurrent" href="map.html">Map</a></li>
                     <li><a class="navnotcurrent" href="contact.html">Contact</a></li>
+                    <li><button id="loginbutton" onclick="window.location.href='login.html'">Login</button></li>
                 </ul>
             </nav>
             </div>
