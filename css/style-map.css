@@ -37,13 +37,13 @@
     text-align: center;
     top: 10%;
 }
-#search-bar {
+.search-bar {
     position: relative;
     width: 70%;
     font-size: 16pt;
     border-radius: 9px;
     border: 2px solid #32CD32;
-    background-color: #e0eeee;
+    background-color: #e0ffff;
     font-weight: 300;
     margin-left: 12px;
     padding: 0 11px 0 13px;
@@ -57,3 +57,26 @@
     position: relative;
     font-size: 16pt;
 }
+
+#origin-input,
+#destination-input {
+
+}
+    
+#origin-input:focus,
+#destination-input:focus {
+    border-color: #4d90fe;
+}
+
+      #mode-selector {
+        color: #fff;
+        background-color: #4d90fe;
+        margin-left: 12px;
+        padding: 5px 11px 0px 11px;
+      }
+
+      #mode-selector label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+      }
