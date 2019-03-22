@@ -71,12 +71,6 @@ header {
     margin: 0 auto;
 }
 
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
     /* -------------------------- Nav Style -------------------------- */
 #navbar {
     width: 75%;
