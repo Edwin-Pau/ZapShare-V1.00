@@ -6,16 +6,14 @@
         <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
         <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
         <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
-        <link rel="stylesheet" type="text/css" media="screen" href="css/style-contact.css">
-    </head>
-
-    <body>
+        <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
             <!------------------------------------------------------
             ------------------  Sets up FireBase  ------------------
             ------------------------------------------------------->
             <script src="js/setup_firebase.js"></script>
-        
-        
+    </head>
+
+    <body>
             <!------------------------------------------------------
             ----------- Header Section Including the Nav Bar  ------
             ------------------------------------------------------->
@@ -28,6 +26,7 @@
                     <li><a class="navnotcurrent" href="about.html">About</a></li>
                     <li><a class="navnotcurrent" href="map.html">Map</a></li>
                     <li><a class="navcurrent" href="contact.html">Contact</a></li>
+                    <li><button id="loginbutton" onclick="window.location.href='login.html'">Login</button></li>
                 </ul>
             </nav>
             </div>
