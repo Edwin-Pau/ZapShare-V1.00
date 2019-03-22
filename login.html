@@ -7,8 +7,6 @@
     <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
-</head>
-<body>
             <!------------------------------------------------------
             ------------------  Sets up FireBase  ------------------
             ------------------------------------------------------->
@@ -20,7 +18,13 @@
             ------------------------------------------------------->
             <script src="js/firebaseui_container.js"></script>
     
-      
+            <!------------------------------------------------------
+            ----------------  Sets up Sticky Nav Bar  --------------
+            ------------------------------------------------------->
+            <script src="js/sticky_navbar.js"></script>
+</head>
+
+<body>
             <!------------------------------------------------------
             ----------- Header Section Including the Nav Bar  ------
             ------------------------------------------------------->
@@ -44,6 +48,7 @@
             ------------------------------------------------------->
             <main>
                 <div id="summary-background">
+                    <div><img id="login-charger-image" src="images/charger2.jpg" alt="charger"></div>
                     <div id="firebaseui-auth-container"></div>
                     <div id="loader">Loading...</div>
                 </div>
