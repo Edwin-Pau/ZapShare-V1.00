@@ -23,8 +23,13 @@ header {
 #logo {
     width: 20%;
     height: 20%;
-    margin-top: 10px;
+    margin-top: 1%;
     margin-left: 15px;
+}
+
+#logo2 {
+    width: 65%;
+    height: 65%;
 }
 
 /* ------------------------------- Classes ----------------------------- */
@@ -85,12 +90,12 @@ header {
 nav {
     float: left;
     margin-left: 20%;
-    margin-top: -9.5%;
+    margin-top: -8.5%;
 }
 
 nav .navcurrent {
     color: #32CD32;
-    padding-bottom: 30px;
+    padding-bottom: 3.75%;
     border-bottom: 5px solid #32CD32;
 }
 
@@ -98,20 +103,18 @@ nav ul li {
     list-style-type: none;
     display: inline;
     font-size: 0.60em;
-    margin: 0 24px;
+    margin: 0 28px;
 }
 
 nav a {
     color: #333;
     text-decoration: none;
-    padding-bottom: 40px;
-    padding-top: 65px;
+    padding-bottom: 3.75%;
 }
 
 nav a:hover {
     color: #32CD32;
-    padding-bottom: 30px;
-    padding-top: 65px;
+    padding-bottom: 3.75%;
     border-bottom: 5px solid #32CD32;
     transition-duration: 0.2s;
     cursor:pointer;
@@ -202,6 +205,10 @@ nav a:hover {
     color: #32CD32;
     cursor: pointer;
     border-style: solid;
+}
+
+#loginbutton:visited {
+    border-radius: 8px;
 }
 
 /* ------------------------- Footer Style ----------------------------- */
