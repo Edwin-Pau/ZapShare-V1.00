@@ -27,6 +27,11 @@ header {
     margin-left: 15px;
 }
 
+#logo2 {
+    width: 65%;
+    height: 65%;
+}
+
 /* ------------------------------- Classes ----------------------------- */
 
 .whitebackground {
@@ -199,6 +204,10 @@ nav a:hover {
     color: #32CD32;
     cursor: pointer;
     border-style: solid;
+}
+
+#loginbutton:visited {
+    border-radius: 8px;
 }
 
 /* ------------------------- Footer Style ----------------------------- */
