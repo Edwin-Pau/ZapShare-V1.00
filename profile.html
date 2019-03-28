@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>ZapShare</title>
+        <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+        <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
+            <!------------------------------------------------------
+            ------------------  Sets up FireBase  ------------------
+            ------------------------------------------------------->
+            <script src="js/setup_firebase.js"></script>
+    </head>
+
+    <body>  
+            <!------------------------------------------------------
+            ----------- Header Section Including the Nav Bar  ------
+            ------------------------------------------------------->
+            <header>
+            <div id="navbar">
+                <div><a href="index.html"><img src="images/logo.png" id="logo" alt="logo"></a></div>
+            <nav>
+                <ul>
+                    <li><a class="navcurrent" href="index.html">Home</a></li>
+                    <li><a class="navnotcurrent" href="about.html">About</a></li>
+                    <li><a class="navnotcurrent" href="map.html">Map</a></li>
+                    <li><a class="navnotcurrent" href="contact.html">Contact</a></li>
+                    <li><button id="loginbutton" onclick="window.location.href='login.html'">Login</button></li>
+                </ul>
+            </nav>
+            </div>
+            </header>    
+
+            <!------------------------------------------------------
+            ---------- Main Section - Contents of the Page ---------
+            ------------------------------------------------------->
+            <main>
+                <div id="summary-background">
+                    <img src="images/about.jpg" id="profile" alt="logo">
+                    <div id="summary-text">
+                        <div id="summary-lines">
+                        <p>Enter additional profile information.</p>
+                        <form id="profile">
+                        <label for="address">Address: </label>
+                        <input type="text" id="address" name="address"><br>
+                        <input type="submit">
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            
+            <!------------------------------------------------------
+            ---------- Footer Section - Links to Subpages ----------
+            ------------------------------------------------------->
+            <footer>
+                <div class="footerfourcolumns">
+                    <div class="footercolumn">
+                        <div class="footertitle">Quick Links</div>
+                        <ul>
+                            <li><a href="sitemap.html">Site Map</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footercolumn">
+                        <div class="footertitle">Policies</div>
+                        <ul>
+                            <li><a href="privacy.html">Privacy</a></li>
+                            <li><a href="disclaimer.html">Disclaimer</a></li>
+                            <li><a href="terms.html">Terms of Use</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footercolumn">
+                        <div class="footertitle">Support</div>
+                        <ul>
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footercolumn">
+                        <div class="footertitle">About</div>
+                        <ul>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="team.html">Meet the Team</a></li>
+                            <li><a href="jointeam.html">Join the Team</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="footer-p">Website designed by <a href="mailto:zapshareplatform@gmail.com">Team 3</a> for <a href="http://bcit.ca">BCIT</a> COMP 1930
+                    <br>
+                    &copy; 2019 ZapShare, All Rights Reserved.</div>
+            </footer>
+    </body>   
+</html>

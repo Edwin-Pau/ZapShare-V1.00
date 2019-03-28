@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
         <meta charset="utf-8">
         <title>ZapShare</title>
         <link rel="stylesheet" type="text/css" media="screen" href="css/style-map.css">
@@ -10,16 +11,45 @@
         <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
         <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
         <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="css/LoginButton.css">
             <!------------------------------------------------------
             ------------------  Sets up FireBase  ------------------
             ------------------------------------------------------->
-            <script src="js/setup_firebase.js"></script>
+            <script src="js/setup_firebase.js">
+        
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBXOtHAyVkN2mZraH3sBpBvkCpgdKpmDyI",
+    authDomain: "zapshare-1e3ba.firebaseapp.com",
+    databaseURL: "https://zapshare-1e3ba.firebaseio.com",
+    projectId: "zapshare-1e3ba",
+    storageBucket: "zapshare-1e3ba.appspot.com",
+    messagingSenderId: "1012195329238"
+  };
+  firebase.initializeApp(config);
+
+        </script>
     </head>
 
     <body>
             <!------------------------------------------------------
             ----------- Header Section Including the Nav Bar  ------
             ------------------------------------------------------->
+            <div id="id01" class="modal">
+  
+        <form class="modal-content animate" action="/action_page.php">
+        <div class="imgcontainer">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>
+        </div>
+        <div class="container">
+            <h1>Welcome to Zapshare</h1>
+            <div id="firebaseui-auth-container"></div>
+            <div id="loader">Loading...</div>  
+        </div>
+            <div class="container" style="background-color:#f1f1f1">
+            </div>
+         </form>
+    </div>
             <header>
             <div class="wrapper">
                 <div><a href="index.html"><img src="images/logo.png" id="logo" alt="logo"></a></div>
@@ -29,7 +59,7 @@
                     <li><a class="navnotcurrent" href="about.html">About</a></li>
                     <li><a class="navcurrent" href="map.html">Map</a></li>
                     <li><a class="navnotcurrent" href="contact.html">Contact</a></li>
-                    <li><button id="loginbutton" onclick="window.location.href='login.html'">Login</button></li>
+                    <li><button id="loginbutton" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button></li>
                 </ul>
             </nav>
             </div>
@@ -228,5 +258,49 @@
                     <br>
                     &copy; 2019 ZapShare, All Rights Reserved.</div>
             </footer>
+        <script>
+    
+var modal = document.getElementById('id01');
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+// Initialize the FirebaseUI Widget using Firebase.
+var ui = new firebaseui.auth.AuthUI(firebase.auth());
+    var uiConfig = {
+  callbacks: {
+    signInSuccessWithAuthResult: function(authResult, redirectUrl) {
+      // User successfully signed in.
+      // Return type determines whether we continue the redirect automatically
+      // or whether we leave that to developer to handle.
+      return true;
+    },
+    uiShown: function() {
+      // The widget is rendered.
+      // Hide the loader.
+      document.getElementById('loader').style.display = 'none';
+    }
+  },
+  // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
+  signInFlow: 'popup',
+  signInSuccessUrl: 'index.html',
+  signInOptions: [
+    //firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+    //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+    //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+    //firebase.auth.GithubAuthProvider.PROVIDER_ID,
+    firebase.auth.EmailAuthProvider.PROVIDER_ID,
+    //firebase.auth.PhoneAuthProvider.PROVIDER_ID
+  ],
+  // Terms of service url.
+  tosUrl: '<your-tos-url>',
+  // Privacy policy url.
+  privacyPolicyUrl: '<your-privacy-policy-url>'
+};
+    // The start method will wait until the DOM is loaded.
+ui.start('#firebaseui-auth-container', uiConfig);
+</script>
     </body>   
 </html>
