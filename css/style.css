@@ -194,6 +194,7 @@ nav a:hover {
     border-radius: 8px;
     border-color: #32CD32;
     border-style: solid;
+    outline: none;
 }
 
 #loginbutton:hover {
