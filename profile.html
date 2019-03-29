@@ -37,22 +37,45 @@
             ---------- Main Section - Contents of the Page ---------
             ------------------------------------------------------->
             <main>
+                <div class="loginbuttons">
+                <button id="loginbutton" onclick="document.getElementById('id01').style.display='block'">Sign Up</button>
+                <button id="logoutbutton" onclick="document.getElementById('id01').style.display='block'">Log In</button>
+                </div>
+                
                 <div id="summary-background">
                     <img src="images/about.jpg" id="profile" alt="logo">
                     <div id="summary-text">
                         <div id="summary-lines">
+                            <p>Welcome _______</p>
+                        <p>Your profile information.</p>
+                        <form id="profile" >
+                        First name: <span class="proinfo" id="firstname" name="firstname">Jimmy</span><br>
+                        Last name: <span class="proinfo" id="lastname" name="lastname">Bob</span><br>
+                        Address: <span class="proinfo" id="interest" name="address">1234 Street</span> <br>
+                        City: <span class="proinfo" id="interest" name="city">Albuquerque</span> <br>
+                            <button onclick="editProfile()" id="editpro" type="button">Edit</button>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+                <div id="summary-background-edit">
+                    <img src="images/about.jpg" id="profile" alt="logo">
+                    <div id="summary-text">
+                        <div id="summary-lines">
+                            <p>Welcome _______</p>
                         <p>Enter additional profile information.</p>
                         <form id="profile" >
                         First name: <input type="text" id="firstname" name="firstname"><br>
                         Last name: <input type="text" id="lastname" name="lastname"><br>
                         Address: <input type="text" id="interest" name="address"> <br>
                         City: <input type="text" id="interest" name="city"> <br>
-                        <input type="submit">    
+                        <input onclick="submitChanges()" type="submit">    
                         </form>
                         </div>
                     </div>
                 </div>
             </main>
+        
             
             <!------------------------------------------------------
             ---------- Footer Section - Links to Subpages ----------
@@ -96,5 +119,7 @@
                     <br>
                     &copy; 2019 ZapShare, All Rights Reserved.</div>
             </footer>
+        <script src="js/create_user.js"></script>
+        <script src="js/profile.js"></script>
     </body>   
 </html>

@@ -4,6 +4,8 @@ html {
 }
 
 body {
+    padding: 0;
+    margin: 0;
     font-family: Roboto, sans-serif;
 }
 
@@ -99,7 +101,7 @@ nav {
 
 nav .navcurrent {
     color: #32CD32;
-    padding-bottom: 3.75%;
+    padding-bottom: 4.6%;
     border-bottom: 5px solid #32CD32;
 }
 
@@ -113,12 +115,12 @@ nav ul li {
 nav a {
     color: #333;
     text-decoration: none;
-    padding-bottom: 3.75%;
+    padding-bottom: 4.6%;
 }
 
 nav a:hover {
     color: #32CD32;
-    padding-bottom: 3.75%;
+    padding-bottom: 4.6%;
     border-bottom: 5px solid #32CD32;
     transition-duration: 0.2s;
     cursor:pointer;
@@ -133,6 +135,15 @@ nav a:hover {
     line-height: 35px;
     color: #333;
     background-color: #f1f4f6;
+}
+#summary-background-edit {
+    margin-top: 12vh;
+    width: 100%;
+    font-size: 24px;
+    line-height: 35px;
+    color: #333;
+    background-color: #f1f4f6;
+    display: none;
 }
 
 #summary-text {
@@ -199,17 +210,14 @@ nav a:hover {
     width: 6vw;
     height: 5vh;
     outline: none;
+    font-size: 0.50em;
 }
 
 #loginbutton:hover {
-    background-color: #FFF;
+    background-color: #FFF; 
     color: #32CD32;
     cursor: pointer;
     border-style: solid;
-    border-radius: 8px;
-}
-
-#loginbutton:visited {
     border-radius: 8px;
 }
 
@@ -225,6 +233,7 @@ nav a:hover {
     border-style: solid;
     width: 6vw;
     height: 5vh;
+    font-size: 0.50em;
 }
 
 #logoutbutton:hover {
@@ -235,8 +244,11 @@ nav a:hover {
     border-radius: 8px;
 }
 
-#logoutbutton:visited {
-    border-radius: 8px;
+.loginbuttons {
+    position: fixed;
+    left: 75%;
+    top: 8%;
+    z-index: 3;
 }
 
 /* ------------------------- Footer Style ----------------------------- */
@@ -308,3 +320,9 @@ footer ul {
 #firebaseui-auth-container * {
     box-shadow: none !important;
 }
+
+#profile {
+    width: 100%;
+}
+
+/* ------------------------- Profile Page ----------------------------- */
