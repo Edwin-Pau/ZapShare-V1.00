@@ -7,6 +7,8 @@
         <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
         <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
         <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="css/LoginButton.css">
+        
             <!------------------------------------------------------
             ------------------  Sets up FireBase  ------------------
             ------------------------------------------------------->
@@ -14,6 +16,22 @@
     </head>
 
     <body>
+            <!------------------------------------------------------
+            ----------- Pop Up Display for Login Screen  -----------
+            ------------------------------------------------------->    
+            <div id="id01" class="modal">
+                <form class="modal-content animate" action="/action_page.php">
+                <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>
+                </div>
+                <div class="container">
+                    <img src="images/logo.png" alt="logo" id="logo2">
+                    <div id="firebaseui-auth-container"></div>
+                    <div id="loader">Loading...</div>  
+                </div>
+                </form>
+            </div>
+        
             <!------------------------------------------------------
             ----------- Header Section Including the Nav Bar  ------
             ------------------------------------------------------->
@@ -26,7 +44,6 @@
                     <li><a class="navnotcurrent" href="about.html">About</a></li>
                     <li><a class="navnotcurrent" href="map.html">Map</a></li>
                     <li><a class="navcurrent" href="contact.html">Contact</a></li>
-                    <li><button id="loginbutton" onclick="window.location.href='login.html'">Login</button></li>
                 </ul>
             </nav>
             </div>
@@ -43,9 +60,10 @@
                 </div>
                 
                 <div id="summary-background">
+                    <img src="images/contactus.jpg" id="adoption-image" alt="logo">
                     <div id="summary-text">
                         <div id="summary-lines">
-                        FILLER
+                        This is where users can contact us using a form.
                         </div>
                     </div>
                 </div>
@@ -94,5 +112,10 @@
                     <br>
                     &copy; 2019 ZapShare, All Rights Reserved.</div>
             </footer>
+        
+            <!------------------------------------------------------
+            ------- JavaScript for Injecting Login Container -------
+            ------------------------------------------------------->
+            <script src="js/login.js"></script>
     </body>   
 </html>
