@@ -15,19 +15,23 @@
         <script src="js/setup_firebase.js"></script>
     </head>
 
-    <body>  
-    <div id="id01" class="modal">
-        <form class="modal-content animate" action="/action_page.php">
-        <div class="imgcontainer">
-        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>
-        </div>
-        <div class="container">
-            <img src="images/logo.png" alt="logo" id="logo2">
-            <div id="firebaseui-auth-container"></div>
-            <div id="loader">Loading...</div>  
-        </div>
-        </form>
-    </div>
+    <body>
+            <!------------------------------------------------------
+            ----------- Pop Up Display for Login Screen  -----------
+            ------------------------------------------------------->    
+            <div id="id01" class="modal">
+                <form class="modal-content animate" action="/action_page.php">
+                <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>
+                </div>
+                <div class="container">
+                    <img src="images/logo.png" alt="logo" id="logo2">
+                    <div id="firebaseui-auth-container"></div>
+                    <div id="loader">Loading...</div>  
+                </div>
+                </form>
+            </div>
+        
             <!------------------------------------------------------
             ----------- Header Section Including the Nav Bar  ------
             ------------------------------------------------------->
@@ -55,7 +59,7 @@
                 </div>
                 
                 <div id="summary-background">
-                    <img src="images/adoption.jpg" id="adoption-image" alt="logo">
+                    <img src="images/homeimage.jpeg" id="adoption-image" alt="logo">
                     <div id="summary-text">
                         <div id="summary-lines">
                         Our vision is to increase <span id="adoption">electric vehicle adoption</span> by improving charger availability anytime, anywhere. We offer a peer-to-peer network and map of private chargers in the city. To find a charger near you, visit our Map page and search a location. To offer your private charger as a service on our network, please sign-up with an account.
