@@ -82,15 +82,17 @@
                             // prompted by your browser. If you see the error "The Geolocation service
                             // failed.", it means you probably did not give permission for the browser to
                             // locate you.
-                            var map, infoWindow;
+                            var map;
+                            var positionVar;
+                            var placeIDVar;
                             function initMap() {
                                 map = new google.maps.Map(document.getElementById('map'), {
                                     mapTypeControl: false,
                                     center: {lat: 49.2, lng: -123},
                                     zoom: 10.5
                                 });
-                                
-                                infoWindow = new google.maps.InfoWindow;
+                                var geocoder = new google.maps.Geocoder;
+                                var infoWindow = new google.maps.InfoWindow;
 
                                 // Try HTML5 geolocation.
                                 if (navigator.geolocation) {
@@ -104,6 +106,9 @@
                                         infoWindow.setContent('Location found.');
                                         infoWindow.open(map);
                                         map.setCenter(pos);
+                                        positionVar = position.coords.latitude.toString() + "," + position.coords.longitude.toString();
+                                        console.log(positionVar);
+                                        geocodeLatLng(geocoder, map);
                                     }, function() {
                                         handleLocationError(true, infoWindow, map.getCenter());
                                     });
@@ -113,6 +118,7 @@
                                 }
                                 
                                 new AutocompleteDirectionsHandler(map);
+                                
                             }
 
                             function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -193,6 +199,30 @@
                                 }
                               });
                         };
+                            function geocodeLatLng(geocoder, map) {
+                                var input = positionVar;
+                                var latlngStr = input.split(',', 2);
+                                var latlng = {lat: parseFloat(latlngStr[0]), lng: parseFloat(latlngStr[1])};
+                                geocoder.geocode({'location': latlng}, function(results, status) {
+                                  if (status === 'OK') {
+                                    if (results[0]) {
+                                      map.setZoom(11);
+                                      var marker = new google.maps.Marker({
+                                        position: latlng,
+                                        map: map
+                                      });
+                                        console.log("SUCCESS");
+                                        console.log(results);
+                                        placeIDVar = results["0"].place_id;
+                                        console.log(placeIDVar);
+                                    } else {
+                                      window.alert('No results found');
+                                    }
+                                  } else {
+                                    window.alert('Geocoder failed due to: ' + status);
+                                  }
+                                });
+                              }
                         </script>
                         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBS6lamHTrbNKoFP95FHKKncimETUfGFhg&libraries=places&callback=initMap"
                                 async defer></script>
