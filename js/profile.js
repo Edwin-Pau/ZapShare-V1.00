@@ -11,10 +11,11 @@ function submitChanges() {
 
 function updateProfile(){
     var firebase = app_firebase;
+    
     firebase.auth().onAuthStateChanged(function(user){
         firebase.database().ref("users/"+user.uid).update(
 		{
-        name:firstName, 
+        name:document.getElementById("firstname").value, 
         email:user.email
         });
     });
