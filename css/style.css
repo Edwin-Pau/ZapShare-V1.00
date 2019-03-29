@@ -169,11 +169,7 @@ nav a:hover {
     
 }
 /* ---------------------- Grid Layout ----------------------- */
-#firebaseui-auth-container {
-    margin: 0;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
+
 .twocolumns {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -202,6 +198,7 @@ nav a:hover {
     border-style: solid;
     width: 6vw;
     height: 5vh;
+    outline: none;
 }
 
 #loginbutton:hover {
@@ -295,4 +292,19 @@ footer ul {
     padding-left: 0;
     margin: 0;
     padding-top: 15px;
+}
+
+/* ------------------------- Firebase UI ----------------------------- */
+#firebaseui-auth-container {
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#firebaseui-auth-container button {
+    background-color: #32CD32 !important;
+}
+
+#firebaseui-auth-container * {
+    box-shadow: none !important;
 }

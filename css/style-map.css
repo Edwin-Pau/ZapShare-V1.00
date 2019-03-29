@@ -1,11 +1,8 @@
 #map-interface {
-    margin-top: 110px;
     width: 100%;
     background-color: #f1f4f6;
-    height: 85vh;
+    height: 80vh;
     display: grid;
-    position: relative; 
-    z-index: -1;
 }
 
 #map-transform {
