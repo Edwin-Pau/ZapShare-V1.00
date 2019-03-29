@@ -52,11 +52,6 @@
             ---------- Main Section - Contents of the Page ---------
             ------------------------------------------------------->
             <main>
-                <div class="loginbuttons">
-                <button id="loginbutton" onclick="document.getElementById('id01').style.display='block'">Sign Up</button>
-                <button id="logoutbutton" onclick="document.getElementById('id01').style.display='block'">Log In</button>
-                </div>
-                
                 <div id="map-interface">
                     <div id="map-transform">
                         <div id="map-widget-transform">
@@ -85,7 +80,6 @@
                             var map;
                             var positionVar;
                             var placeIDVar;
-                            var placeIDVarSentinel;
                             function initMap() {
                                 map = new google.maps.Map(document.getElementById('map'), {
                                     mapTypeControl: false,
@@ -178,7 +172,7 @@
                                     //      } else {
                                     //          me.originPlaceId = place.place_id;
                                     //      }
-                                me.originPlaceId = placeIDVar;
+                              me.originPlaceId = place.place_id;
                             } else {
                                 me.destinationPlaceId = place.place_id;
                             }
@@ -222,7 +216,7 @@
                                         console.log(results);
                                         placeIDVar = results["0"].place_id;
                                         console.log(placeIDVar);
-                                        placeIDVarSentinel = true;
+                                        // placeIDVarSentinel = true;
                                         document.getElementById("origin-input").setAttribute("value",   results["0"].formatted_address);
                                     } else {
                                       window.alert('No results found');
