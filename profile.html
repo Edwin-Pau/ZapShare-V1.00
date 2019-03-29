@@ -8,6 +8,8 @@
         <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
         <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
         <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="css/LoginButton.css">
+        
             <!------------------------------------------------------
             ------------------  Sets up FireBase  ------------------
             ------------------------------------------------------->
@@ -27,7 +29,6 @@
                     <li><a class="navnotcurrent" href="about.html">About</a></li>
                     <li><a class="navnotcurrent" href="map.html">Map</a></li>
                     <li><a class="navnotcurrent" href="contact.html">Contact</a></li>
-                    <li><button id="loginbutton" onclick="window.location.href='login.html'">Login</button></li>
                 </ul>
             </nav>
             </div>
@@ -42,29 +43,37 @@
                 <button id="logoutbutton" onclick="document.getElementById('id01').style.display='block'">Log In</button>
                 </div>
                 
+                <!------------------------------------------------------
+                --------- Displays Current Profile Information ---------
+                ------------------------------------------------------->
                 <div id="summary-background">
-                    <img src="images/about.jpg" id="profile" alt="logo">
+                    <img src="images/profile.jpg" id="profile" alt="logo">
                     <div id="summary-text">
                         <div id="summary-lines">
-                            <p>Welcome _______</p>
+                        <p>Welcome _______</p>
+                          
                         <p>Your profile information.</p>
                         <form id="profile" >
-                        First name: <span class="proinfo" id="firstname" name="firstname">Jimmy</span><br>
-                        Last name: <span class="proinfo" id="lastname" name="lastname">Bob</span><br>
-                        Address: <span class="proinfo" id="interest" name="address">1234 Street</span> <br>
-                        City: <span class="proinfo" id="interest" name="city">Albuquerque</span> <br>
-                            <button onclick="editProfile()" id="editpro" type="button">Edit</button>
+                        First name: <span class="proinfo" id="firstname1" name="firstname">Jimmy</span><br>
+                        Last name: <span class="proinfo" id="lastname1" name="lastname">Bob</span><br>
+                        Address: <span class="proinfo" id="interest1" name="address">1234 Street</span> <br>
+                        City: <span class="proinfo" id="interest1" name="city">Albuquerque</span> <br>
+                            <button onclick="editProfile()" id="editpro1" type="button">Edit</button>
                         </form>
                         </div>
                     </div>
                 </div>
+                
+                <!------------------------------------------------------
+                ---------------- Edits Profile Information -------------
+                ------------------------------------------------------->
                 <div id="summary-background-edit">
-                    <img src="images/about.jpg" id="profile" alt="logo">
+                    <img src="images/profile.jpg" id="profile" alt="logo">
                     <div id="summary-text">
                         <div id="summary-lines">
                             <p>Welcome _______</p>
                         <p>Enter additional profile information.</p>
-                        <form id="profile" >
+                        <form id="profile">
                         First name: <input type="text" id="firstname" name="firstname"><br>
                         Last name: <input type="text" id="lastname" name="lastname"><br>
                         Address: <input type="text" id="interest" name="address"> <br>
@@ -75,7 +84,6 @@
                     </div>
                 </div>
             </main>
-        
             
             <!------------------------------------------------------
             ---------- Footer Section - Links to Subpages ----------
@@ -119,7 +127,31 @@
                     <br>
                     &copy; 2019 ZapShare, All Rights Reserved.</div>
             </footer>
-        <script src="js/create_user.js"></script>
-        <script src="js/profile.js"></script>
+            <!------------------------------------------------------
+            ---- JavaScript for Updating User Profile into DB ------
+            ------------------------------------------------------->
+            <script src="js/create_user.js"></script>
+            <script src="js/profile.js"></script>
+        
+            <!------------------------------------------------------
+            ------- JavaScript for Injecting Login Container -------
+            ------------------------------------------------------->
+            <script src="js/login.js"></script>
+            
+            <!------------------------------------------------------
+            ----------- Div for the pop-up login screen ------------
+            ------------------------------------------------------->    
+            <div id="id01" class="modal">
+                <form class="modal-content animate" action="/action_page.php">
+                <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>
+                </div>
+                <div class="container">
+                <img src="images/logo.png" alt="logo" id="logo2">
+                <div id="firebaseui-auth-container"></div>
+                <div id="loader">Loading...</div>  
+                </div>
+                </form>
+            </div>
     </body>   
 </html>
