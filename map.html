@@ -80,13 +80,15 @@
                             var map;
                             var positionVar;
                             var placeIDVar;
+                            var geocoder;
+                            var address = "willingdon ave burnaby";
                             function initMap() {
                                 map = new google.maps.Map(document.getElementById('map'), {
                                     mapTypeControl: false,
                                     center: {lat: 49.2, lng: -123},
                                     zoom: 10.5
                                 });
-                                var geocoder = new google.maps.Geocoder;
+                                geocoder = new google.maps.Geocoder;
                                 var infoWindow = new google.maps.InfoWindow;
 
                                 // Try HTML5 geolocation.
@@ -113,6 +115,7 @@
                                 }
                                 
                                 new AutocompleteDirectionsHandler(map);
+                                codeAddress(geocoder, map);
                                 
                             }
 
@@ -219,6 +222,22 @@
                                   }
                                 });
                               }
+                            
+                            function codeAddress(geocoder, map) {
+                                geocoder.geocode({'address': address}, function(results, status) {
+                                    if (status === 'OK') {
+                                        var marker = new google.maps.Marker({
+                                            map: map,
+                                            position: results["0"].geometry.location
+                                        });
+                                        marker.addListener('click', function() {
+                                          console.log("Click")
+                                        });
+                                    } else {
+                                        alert('Geocode was not successful for the following reason: ' + status);
+                                    }
+                                });
+                            }
                         </script>
                         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBS6lamHTrbNKoFP95FHKKncimETUfGFhg&libraries=places&callback=initMap"
                                 async defer></script>
