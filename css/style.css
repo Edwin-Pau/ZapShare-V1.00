@@ -197,7 +197,7 @@ nav a:hover {
 }
 
 /* ---------------------------- Button Styling -------------------------- */
-#loginbutton {
+.buttonstyle {
     text-align: center;
     background-color: #32CD32;
     color: #F6F6F6;
@@ -213,32 +213,8 @@ nav a:hover {
     font-size: 0.50em;
 }
 
-#loginbutton:hover {
+.buttonstyle:hover {
     background-color: #FFF; 
-    color: #32CD32;
-    cursor: pointer;
-    border-style: solid;
-    border-radius: 8px;
-}
-
-#logoutbutton {
-    text-align: center;
-    background-color: #32CD32;
-    color: #F6F6F6;
-    text-decoration: none;
-    font-size: 0.8em;
-    transition-duration: 0.2s;
-    border-radius: 8px;
-    border-color: #32CD32;
-    border-style: solid;
-    width: 6vw;
-    height: 5vh;
-    outline: none;
-    font-size: 0.50em;
-}
-
-#logoutbutton:hover {
-    background-color: #FFF;
     color: #32CD32;
     cursor: pointer;
     border-style: solid;
