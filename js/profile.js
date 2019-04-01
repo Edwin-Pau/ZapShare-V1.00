@@ -22,3 +22,5 @@ function submitChanges() {
   document.getElementById("summary-background").style.display = "block";
   document.getElementById("summary-background-edit").style.display = "hidden";
 }
+
+document.getElementById("username").innerHTML = "Bob";
