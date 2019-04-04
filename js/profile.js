@@ -28,15 +28,3 @@ function submitChanges() {
   document.getElementById("summary-background").style.display = "block";
   document.getElementById("summary-background-edit").style.display = "hidden";
 }
-
-
-
-
-
-// Get a reference to the database service
-var database = firebase.database();
-var userId = firebase.auth().currentUser.uid;
-return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
-  var username = (snapshot.val() && snapshot.val().name) || 'name';
-  document.getElementById("username").innerHTML = username;
-});

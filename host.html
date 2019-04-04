@@ -45,41 +45,54 @@
                 </div>
                 
                 <!------------------------------------------------------
-                --------- Displays Current Profile Information ---------
+                ----------- Displays Current Host Information ----------
                 ------------------------------------------------------->
                 <div id="summary-background">
                     <img src="images/profile.jpg" id="profile" alt="logo">
                     <div id="summary-text">
                         <div id="summary-lines">
-                        <p>Welcome <span onload="writeName" id="username"></span></p>
-                          
-                        <p>Your profile information.</p>
+                        <p>Welcome <span onload="writeName" id="username"></span></p>  
+                        <p>Your Host Location Details:</p>
                         <form id="profile" >
-                        First name: <span class="proinfo" id="dbfirstname" name="firstname"></span><br>
-                        Last name: <span class="proinfo" id="dblastname" name="lastname"></span><br>
-                        Address: <span class="proinfo" id="dbaddress" name="address"></span> <br>
-                        City: <span class="proinfo" id="dbcity" name="city"></span> <br>
-                            <button onclick="editProfile()" id="editpro1" type="button">Edit</button>
+                        <label for="hostname">Host Name:</label>
+                        <span class="proinfo" id="hostname" name="hostname"></span><br>
+
+                        <label for="hostphonenum">Host Phone Number:</label>
+                        <span class="proinfo" id="hostphonenum" name="hostphonenum"></span><br>
+                            
+                        <label for="hostaddress">Host Address:</label>
+                        <span class="proinfo" id="hostaddress" name="hostaddress"></span><br>
+                            
+                        <label for="hostcity">Host City:</label>
+                        <span class="proinfo" id="hostcity" name="hostcity"></span><br>
+
+                         <button onclick="editProfile()" id="editpro1" type="button"></button>
                         </form>
                         </div>
                     </div>
                 </div>
                 
                 <!------------------------------------------------------
-                ---------------- Edits Profile Information -------------
+                ----------- Edits Host Location Information ------------
                 ------------------------------------------------------->
                 <div id="summary-background-edit">
                     <img src="images/profile.jpg" id="profile" alt="logo">
                     <div id="summary-text">
                         <div id="summary-lines">
-                            <p>Welcome _______</p>
-                        <p>Enter additional profile information.</p>
+                        <p>Welcome <span onload="writeName" id="username"></span></p>  
+                        <p>Edit Your Host Location Details:</p>
                         <form id="profile">
-                        First name: <input type="text" id="firstname" name="firstname"><br>
-                        Last name: <input type="text" id="lastname" name="lastname"><br>
-                        Address: <input type="text" id="address" name="address"> <br>
-                        City: <input type="text" id="city" name="city"> <br>
-                        <input onclick="submitChanges()" type="submit">    
+                        <label for="hostname">Host Name:</label>
+                        <span class="proinfo" id="hostname" name="hostname"></span><br>
+
+                        <label for="hostphonenum">Host Phone Number:</label>
+                        <span class="proinfo" id="hostphonenum" name="hostphonenum"></span><br>
+                            
+                        <label for="hostaddress">Host Address:</label>
+                        <span class="proinfo" id="hostaddress" name="hostaddress"></span><br>
+                            
+                        <label for="hostcity">Host City:</label>
+                        <span class="proinfo" id="hostcity" name="hostcity"></span><br>
                         </form>
                         </div>
                     </div>
