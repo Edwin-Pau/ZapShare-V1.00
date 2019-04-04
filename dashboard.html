@@ -8,7 +8,6 @@
         <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
         <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
         <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
-        <link rel="stylesheet" type="text/css" media="screen" href="css/form.css">
         <link rel="stylesheet" type="text/css" media="screen" href="css/LoginButton.css">
         
             <!------------------------------------------------------
@@ -48,19 +47,19 @@
                 <!------------------------------------------------------
                 --------- Displays Current Profile Information ---------
                 ------------------------------------------------------->
-                <div id="summary-background" >
+                <div id="summary-background">
                     <img src="images/profile.jpg" id="profile" alt="logo">
                     <div id="summary-text">
                         <div id="summary-lines">
-                        <p>Welcome <span id="dbusername"></span></p>                         
+                        <p>Welcome <span onload="writeName" id="username"></span></p>
+                          
                         <p>Your profile information.</p>
                         <form id="profile" >
                         First name: <span class="proinfo" id="dbfirstname" name="firstname"></span><br>
                         Last name: <span class="proinfo" id="dblastname" name="lastname"></span><br>
                         Address: <span class="proinfo" id="dbaddress" name="address"></span> <br>
                         City: <span class="proinfo" id="dbcity" name="city"></span> <br>
-                            <button class="buttonstyle" onclick="editProfile()" id="editpro1" type="button">Edit</button>   
-
+                            <button onclick="editProfile()" id="editpro1" type="button">Edit</button>
                         </form>
                         </div>
                     </div>
@@ -69,17 +68,18 @@
                 <!------------------------------------------------------
                 ---------------- Edits Profile Information -------------
                 ------------------------------------------------------->
-                <div id="summary-background-edit" >
+                <div id="summary-background-edit">
                     <img src="images/profile.jpg" id="profile" alt="logo">
                     <div id="summary-text">
-                        <div id="summary-lines">   
-                        <p>Enter or edit profile information.</p>
+                        <div id="summary-lines">
+                            <p>Welcome _______</p>
+                        <p>Enter additional profile information.</p>
                         <form id="profile">
-                        First name <br><input class="newinfo" type="text" id="firstname" name="firstname"><br>
-                        Last name <br><input class="newinfo" type="text" id="lastname" name="lastname"><br>
-                        Address <br><input class="newinfo" type="text" id="address" name="address"> <br>
-                        City <br><input class="newinfo" type="text" id="city" name="city"> <br>
-                        <input class="buttonstyle" id='submit' onclick="submitChanges()" type="submit">    
+                        First name: <input type="text" id="firstname" name="firstname"><br>
+                        Last name: <input type="text" id="lastname" name="lastname"><br>
+                        Address: <input type="text" id="address" name="address"> <br>
+                        City: <input type="text" id="city" name="city"> <br>
+                        <input onclick="submitChanges()" type="submit">    
                         </form>
                         </div>
                     </div>
