@@ -47,7 +47,7 @@
                 <!------------------------------------------------------
                 ----------- Displays Current Host Information ----------
                 ------------------------------------------------------->
-                <div id="summary-background">
+                <div id="host-details">
                     <img src="images/profile.jpg" id="profile" alt="logo">
                     <div id="summary-text">
                         <div id="summary-lines">
@@ -65,9 +65,10 @@
                             
                         <label for="hostcity">Host City:</label>
                         <span class="proinfo" id="hostcity" name="hostcity"></span><br>
-
-                         <button onclick="editProfile()" id="editpro1" type="button"></button>
+                            
+                        <button onclick="editHostDetails()" type="button">Edit</button>
                         </form>
+                            
                         </div>
                     </div>
                 </div>
@@ -75,7 +76,7 @@
                 <!------------------------------------------------------
                 ----------- Edits Host Location Information ------------
                 ------------------------------------------------------->
-                <div id="summary-background-edit">
+                <div id="host-details-edit">
                     <img src="images/profile.jpg" id="profile" alt="logo">
                     <div id="summary-text">
                         <div id="summary-lines">
@@ -83,16 +84,18 @@
                         <p>Edit Your Host Location Details:</p>
                         <form id="profile">
                         <label for="hostname">Host Name:</label>
-                        <span class="proinfo" id="hostname" name="hostname"></span><br>
+                        <input class="proinfo" id="dbhostname" name="hostname"><br>
 
                         <label for="hostphonenum">Host Phone Number:</label>
-                        <span class="proinfo" id="hostphonenum" name="hostphonenum"></span><br>
+                        <input class="proinfo" id="dbhostphonenum" name="hostphonenum"><br>
                             
                         <label for="hostaddress">Host Address:</label>
-                        <span class="proinfo" id="hostaddress" name="hostaddress"></span><br>
+                        <input class="proinfo" id="dbhostaddress" name="hostaddress"><br>
                             
                         <label for="hostcity">Host City:</label>
-                        <span class="proinfo" id="hostcity" name="hostcity"></span><br>
+                        <input class="proinfo" id="dbhostcity" name="hostcity"><br>
+                        
+                        <button onclick="saveHostDetails()" type="button">Save Changes</button>
                         </form>
                         </div>
                     </div>
@@ -142,10 +145,10 @@
                     &copy; 2019 ZapShare, All Rights Reserved.</div>
             </footer>
             <!------------------------------------------------------
-            ---- JavaScript for Updating User Profile into DB ------
+            ---- JavaScript for Updating Host Details into DB ------
             ------------------------------------------------------->
             <script src="js/create_user.js"></script>
-            <script src="js/profile.js"></script>
+            <script src="js/host.js"></script>
             
             <!------------------------------------------------------
             ----------- Div for the pop-up login screen ------------
