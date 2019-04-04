@@ -20,13 +20,17 @@ function saveHostDetails() {
     document.getElementById("host-details-edit").style.display = "none";
     
     firebase.database().ref('/hosts').on('value', function(snapshot) {
+    
+    // Variables for JSON object and the address string array.    
     var myObject = snapshot.val();
+    var addressArr = [];    
+    
+    // Grabs the address value from each JSON object.    
     for (value in myObject) {
-        console.log(myObject[value].address);
+        addressArr.push(myObject[value].address);
     }
+    alert(addressArr);    
     });
-    
-    
     
 }
 
