@@ -29,6 +29,16 @@
                     <li><a class="navnotcurrent" href="map.html">Map</a></li>
                     <li><a class="navnotcurrent" href="contact.html">Contact</a></li>
                 </ul>
+                
+                <!------------------------------------------------------
+                -------------------- Login Buttons ---------------------
+                ------------------------------------------------------->
+                <div class="loginbuttons">
+                <button id="signupbutton" class="buttonstyle" style="display: none" onclick="document.getElementById('id01').style.display='block'">Sign Up</button>
+                <button id="loginbutton" class="buttonstyle" style="display: none" onclick="document.getElementById('id01').style.display='block'">Log In</button>
+                <button id="profilebutton" class="buttonstyle" style="display: none">Profile</button> 
+                <button id="logoutbutton" class="buttonstyle" style="display: none">Log Out</button>
+                </div>
             </nav>
             </div>
             </header>    
@@ -37,13 +47,6 @@
             ---------- Main Section - Contents of the Page ---------
             ------------------------------------------------------->
             <main>
-                <div class="loginbuttons">
-                <button id="signupbutton" class="buttonstyle" style="display: none" onclick="document.getElementById('id01').style.display='block'">Sign Up</button>
-                <button id="loginbutton" class="buttonstyle" style="display: none" onclick="document.getElementById('id01').style.display='block'">Log In</button>
-                <button id="profilebutton" class="buttonstyle" style="display: none">Profile</button> 
-                <button id="logoutbutton" class="buttonstyle" style="display: none">Log Out</button>
-                </div>
-                
                 <!------------------------------------------------------
                 ----------- Displays Current Host Information ----------
                 ------------------------------------------------------->
@@ -52,7 +55,7 @@
                     <div id="summary-text">
                         <div id="summary-lines">
                         <p>Welcome <span onload="writeName" id="username"></span></p>  
-                        <p>Your Host Location Details:</p>
+                        <p>Your Charger Location Details:</p>
                         <form id="profile" >
                         <label for="hostname">Host Name:</label>
                         <span class="proinfo" id="hostname" name="hostname"></span><br>
@@ -66,7 +69,7 @@
                         <label for="hostcity">Host City:</label>
                         <span class="proinfo" id="hostcity" name="hostcity"></span><br>
                             
-                        <button onclick="editHostDetails()" type="button">Edit</button>
+                        <button onclick="editHostDetails()" type="button">Edit Details</button>
                         </form>
                             
                         </div>

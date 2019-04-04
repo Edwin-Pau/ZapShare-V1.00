@@ -7,6 +7,7 @@
         <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
         <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
         <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="css/contactus.css">
         <link rel="stylesheet" type="text/css" media="screen" href="css/LoginButton.css">
         
             <!------------------------------------------------------
@@ -45,6 +46,13 @@
                     <li><a class="navnotcurrent" href="map.html">Map</a></li>
                     <li><a class="navcurrent" href="contact.html">Contact</a></li>
                 </ul>
+                
+                <div class="loginbuttons">
+                <button id="signupbutton" class="buttonstyle" style="display: none" onclick="document.getElementById('id01').style.display='block'">Sign Up</button>
+                <button id="loginbutton" class="buttonstyle" style="display: none" onclick="document.getElementById('id01').style.display='block'">Log In</button>
+                <button id="profilebutton" class="buttonstyle" style="display: none">Profile</button> 
+                <button id="logoutbutton" class="buttonstyle" style="display: none">Log Out</button>
+                </div>
             </nav>
             </div>
             </header>    
@@ -54,19 +62,70 @@
             ---------- Main Section - Contents of the Page ---------
             ------------------------------------------------------->
             <main>
-                <div class="loginbuttons">
-                <button id="signupbutton" class="buttonstyle" style="display: none" onclick="document.getElementById('id01').style.display='block'">Sign Up</button>
-                <button id="loginbutton" class="buttonstyle" style="display: none" onclick="document.getElementById('id01').style.display='block'">Log In</button>
-                <button id="profilebutton" class="buttonstyle" style="display: none">Profile</button> 
-                <button id="logoutbutton" class="buttonstyle" style="display: none">Log Out</button>
-                </div>
-                
                 <div id="summary-background">
-                    <img src="images/contactus.jpg" id="adoption-image" alt="logo">
+                    
+                    <div class="headerimagecontainer">
+                        <img src="images/contactus.jpg" class="headerimage" alt="logo">
+                        <div class="headertext">
+                            Contact Us
+                        </div>
+                    </div> 
+                    
                     <div id="summary-text">
                         <div id="summary-lines">
-                        This is where users can contact us using a form.
+                        Please fill out the form below to reach the ZapShare team!
                         </div>
+                    </div>
+                    
+                    <div class="wrapper2">
+                        <form action="php/formmail.php" method="post">
+                            <input type="hidden" name="recipient" id="recipient" value="Edwin">
+                            <input type="hidden" name="subject" id="subject" value="ZapShare Contact">
+                            <input type="hidden" name="redirect" id="redirect" value="thanks.html">
+                            <input type="hidden" name="sort" id="sort" value="order:firstname,lastname,email,company,phone,type,comment">
+
+                            <fieldset>
+                                <legend>Contact Info</legend>
+                                <div class="formrow">
+                                    <label for="firstname" class="labelcol">First Name</label>
+                                    <input type="text" name="firstname" id="firstname" size="30">
+                                </div>
+                                <div class="formrow">
+                                    <label for="lastname" class="labelcol">Last Name</label>
+                                    <input type="text" name="lastname" id="lastname" size="30">
+                                </div>
+                                <div class="formrow">
+                                    <label for="email" class="labelcol">Email</label>
+                                    <input type="text" name="email" id="email" size="30">
+                                </div>
+                                <div class="formrow">
+                                    <label for="company" class="labelcol">Company</label>
+                                    <input type="text" name="company" id="company" size="30">
+                                </div>
+                                <div class="formrow">
+                                    <label for="phone" class="labelcol">Phone</label>
+                                    <input type="text" name="phone" id="phone" size="30">
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Select a Category You Are Inquiring About</legend>
+                                <select size="5" name="type" id="type" style="width: 528px">
+                                    <option value="directory">Business Inquiries</option>
+                                    <option value="exchanges">Feature Request</option>
+                                    <option value="resources">Technical Support</option>
+                                    <option value="policies">Service Feedback</option>
+                                    <option value="business">Report a Bug</option>
+                                </select>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Message</legend>
+                                <textarea name="comment" id="comment" cols="70" rows="10"></textarea>
+                            </fieldset>
+                            <div id="formsubmit">
+                                <input type="submit" value="Submit" id="subbutton">
+                                <input type="reset" value="Reset" id="resetbutton">
+                            </div>
+                        </form>
                     </div>
                 </div>
             </main>  

@@ -8,6 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
         <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="css/homestyle.css">
         <link rel="stylesheet" type="text/css" media="screen" href="css/LoginButton.css">
         <!------------------------------------------------------
         ------------------  Sets up FireBase  ------------------
@@ -47,27 +48,47 @@
                 </ul>
             </nav>
             </div>
-            </header>
-
-            <!------------------------------------------------------
-            ---------- Main Section - Contents of the Page ---------
-            ------------------------------------------------------->
-            <main>
                 <div class="loginbuttons">
                 <button id="signupbutton" class="buttonstyle" style="display: none" onclick="document.getElementById('id01').style.display='block'">Sign Up</button>
                 <button id="loginbutton" class="buttonstyle" style="display: none" onclick="document.getElementById('id01').style.display='block'">Log In</button>
                 <button id="profilebutton" class="buttonstyle" style="display: none">Profile</button> 
                 <button id="logoutbutton" class="buttonstyle" style="display: none">Log Out</button>
                 </div>
+            </header>
+
+            <!------------------------------------------------------
+            ---------- Main Section - Contents of the Page ---------
+            ------------------------------------------------------->
+            <main>
+                
                 
                 <div id="summary-background">
                     <img src="images/homeimage.jpeg" id="adoption-image" alt="logo">
                     <div id="summary-text">
                         <div id="summary-lines">
-                        Our vision is to increase <span id="adoption">electric vehicle adoption</span> by improving charger availability anytime, anywhere. We offer a peer-to-peer network and map of private chargers in the city. To find a charger near you, visit our Map page and search a location. To offer your private charger as a service on our network, please sign-up with an account.
+                        Our mission is to increase <span id="adoption">electric vehicle adoption</span> by improving charger availability anytime and anywhere. We offer a peer-to-peer network of private chargers in the city, viewable on a real-time map. Find a charger near you by visiting our Map page. To offer your EV charger on our network, sign up for an account and create your charger host profile today!
                         </div>
                     </div>
-                </div>
+                </div>    
+                    
+                    <div class="wrapper threecolumns whitebackground">
+                            <div class="homebox">
+                            <div class="boxheading">Title 1<img class="homeicons" src="" alt="homeicon1"></div>
+                            <div class="boxparagraph">Title 1</div>
+                            </div>
+
+                            <div class="homebox">
+                            <div class="boxheading">Title 2<img class="homeicons" src="" alt="homeicon2"></div>
+                            <div class="boxparagraph">Title 2</div>
+                            </div>
+
+                            <div class="homebox">
+                            <div class="boxheading">Title 3<img class="homeicons" src="./index_files/resourcesicon.png" alt="resources"></div>
+                            <div class="boxparagraph">Title 3</div>
+                            </div>
+                    </div>
+                    
+                
             </main>
             
             <!------------------------------------------------------
