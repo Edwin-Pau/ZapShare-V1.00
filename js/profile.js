@@ -35,6 +35,7 @@ var name = document.getElementById("dbusername");
 	   var db = firebase.database().ref().child("users/"+user.uid + "/name");
 	   db.on ("value", snap => name.innerText = snap.val());
 });
+
 firebase.auth().onAuthStateChanged(function(user){
 var name = document.getElementById("username");
 	   var db = firebase.database().ref().child("users/"+user.uid + "/name");
