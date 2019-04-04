@@ -1,0 +1,24 @@
+#summary-text{
+    width: 50%;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    line-height: 5vh;
+}
+
+#submit {
+  border-radius: 25px;
+  height: 40px; 
+  width: 25%;
+  outline-width: 0;
+  text-align: center;
+}
+
+.newinfo {
+    border-radius: 25px;
+    height: 3vh;
+    text-align: center;
+    outline-width: 0;
+    border: solid;
+    border-width: 1px;
+}
+

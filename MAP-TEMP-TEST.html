@@ -52,6 +52,13 @@
             ---------- Main Section - Contents of the Page ---------
             ------------------------------------------------------->
             <main>
+                <div class="loginbuttons">
+                <button id="signupbutton" class="buttonstyle" style="display: none" onclick="document.getElementById('id01').style.display='block'">Sign Up</button>
+                <button id="loginbutton" class="buttonstyle" style="display: none" onclick="document.getElementById('id01').style.display='block'">Log In</button>
+                <button id="profilebutton" class="buttonstyle" style="display: none">Profile</button> 
+                <button id="logoutbutton" class="buttonstyle" style="display: none">Log Out</button>
+                </div>
+                
                 <div id="map-interface">
                     <div id="map-transform">
                         <div id="map-widget-transform">
@@ -81,7 +88,8 @@
                             var positionVar;
                             var placeIDVar;
                             var geocoder;
-                            var address = "british columbia institute of technology";
+                            var address = ["british columbia institute of technology", "main street science world", "13775 74th ave surrey newton"];
+                            var index = 0;
                             function initMap() {
                                 map = new google.maps.Map(document.getElementById('map'), {
                                     mapTypeControl: false,
@@ -99,9 +107,6 @@
                                             lng: position.coords.longitude
                                         };
 
-                                        infoWindow.setPosition(pos);
-                                        infoWindow.setContent('Location found.');
-                                        infoWindow.open(map);
                                         map.setCenter(pos);
                                         positionVar = position.coords.latitude.toString() + "," + position.coords.longitude.toString();
                                         console.log(positionVar);
@@ -115,8 +120,11 @@
                                 }
                                 
                                 new AutocompleteDirectionsHandler(map);
-                                codeAddress(geocoder, map);
                                 
+                                address.forEach(function(item, index, array) {
+                                    console.log(item, index);
+                                    codeAddress(geocoder, map);
+                                });
                             }
 
                             function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -169,14 +177,14 @@
                               return;
                             }
                             if (mode === 'ORIG') {
-                              me.originPlaceId = place.place_id;
+                                me.originPlaceId = place.place_id;
                             } else {
                                 me.destinationPlaceId = place.place_id;
                             }
                             me.route();
                           });
                         };
-
+                          
                         AutocompleteDirectionsHandler.prototype.route = function() {
                           if (!this.originPlaceId || !this.destinationPlaceId) {
                             return;
@@ -204,7 +212,7 @@
                                 geocoder.geocode({'location': latlng}, function(results, status) {
                                   if (status === 'OK') {
                                     if (results[0]) {
-                                      map.setZoom(11);
+                                      map.setZoom(13);
                                       var marker = new google.maps.Marker({
                                         position: latlng,
                                         map: map
@@ -224,14 +232,25 @@
                               }
                             
                             function codeAddress(geocoder, map) {
-                                geocoder.geocode({'address': address}, function(results, status) {
+                                geocoder.geocode({'address': address[index++]}, function(results, status) {
                                     if (status === 'OK') {
                                         var marker = new google.maps.Marker({
                                             map: map,
                                             position: results["0"].geometry.location
                                         });
                                         marker.addListener('click', function() {
-                                          console.log("Click")
+                                            console.log("Click")
+                                            var parent = document.getElementById("search-bar-background");
+                                            var child = document.getElementById("destination-input");
+                                            var NewDestInput = document.createElement("input");
+                                            NewDestInput.setAttribute("id", "destination-input");
+                                            NewDestInput.setAttribute("class", "search-bar");
+                                            NewDestInput.setAttribute("type", "text");
+                                            NewDestInput.setAttribute("placeholder", "Enter a destination location");
+                                            parent.removeChild(child);
+                                            parent.appendChild(NewDestInput);
+                                            new AutocompleteDirectionsHandler(map);
+                                            document.getElementById("destination-input").setAttribute("value",       results["0"].formatted_address);
                                         });
                                     } else {
                                         alert('Geocode was not successful for the following reason: ' + status);
@@ -292,9 +311,15 @@
             </footer>
         
             <!------------------------------------------------------
-            ------- JavaScript for Injecting Login Container -------
+            -------- JavaScript for Injecting Login Logout ---------
             ------------------------------------------------------->
             <script src="js/login.js"></script>
+            <script src="js/logout.js"></script>
+        
+            <!------------------------------------------------------
+            ------ JavaScript for Checking User Is Logged In -------
+            ------------------------------------------------------->
+            <script src="js/checkauthstate.js"></script>
         
             <!------------------------------------------------------
             ----------- Div for the pop-up login screen ------------
@@ -312,4 +337,4 @@
                 </form>
             </div>
     </body>   
-</html>
+</html>s
