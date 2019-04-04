@@ -19,22 +19,15 @@ function saveHostDetails() {
     document.getElementById("host-details").style.display = "block";
     document.getElementById("host-details-edit").style.display = "none";
     
-    function snapshotToArray(snapshot) {
-    var returnArr = [];
-
-    snapshot.forEach(function(childSnapshot) {
-        var item = childSnapshot.val();
-        item.key = childSnapshot.key;
-
-        returnArr.push(item);
-    });
-
-    return returnArr;
-    };
-    
     firebase.database().ref('/hosts').on('value', function(snapshot) {
-    console.log(returnArr);
+    var myObject = snapshot.val();
+    for (value in myObject) {
+        console.log(myObject[value].address);
+    }
     });
+    
+    
+    
 }
 
 
