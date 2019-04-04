@@ -261,7 +261,9 @@
                                             NewDestInput.setAttribute("placeholder", "Enter a destination location");
                                             parent.removeChild(child);
                                             parent.appendChild(NewDestInput);
+                                            directionsDisplay.setMap(null);
                                             new AutocompleteDirectionsHandler(map);
+                                            directionsDisplay.setMap(map);
                                             document.getElementById("destination-input").setAttribute("value",       results["0"].formatted_address);
                                         });
                                     } else {
@@ -270,7 +272,7 @@
                                 });
                             }
                         </script>
-                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBS6lamHTrbNKoFP95FHKKncimETUfGFhg&libraries=places&callback=initMap"</script>
+                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBS6lamHTrbNKoFP95FHKKncimETUfGFhg&libraries=places&callback=initMap"></script>
                     </div>
                 </div>
         </main>
