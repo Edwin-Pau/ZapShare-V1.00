@@ -88,7 +88,23 @@
                             var positionVar;
                             var placeIDVar;
                             var geocoder;
-                            var address = ["british columbia institute of technology", "main street science world", "13775 74th ave surrey newton"];
+                            firebase.database().ref('/hosts').on('value', function(snapshot) {
+    
+                                // Variables for JSON object and the address string array.    
+                                var myObject = snapshot.val();
+                                addressArr = [];    
+                                    
+                                // Grabs the address value from each JSON object.
+                                // ----------- Puts each address into a String Array ---------- //    
+                                for (value in myObject) {
+                                    addressArr.push(myObject[value].address);
+                                }
+                                console.log(addressArr);
+                                addressArr.forEach(function(item, index, array) {
+                                    console.log(item, index);
+                                    codeAddress(geocoder, map);
+                                });
+                            });
                             var index = 0;
                             function initMap() {
                                 map = new google.maps.Map(document.getElementById('map'), {
@@ -108,7 +124,7 @@
                                         };
 
                                         map.setCenter(pos);
-                                        positionVar = position.coords.latitude.toString() + "," + position.coords.longitude.toString();
+                                        positionVar = position.coords.latitude.toString() + "," +   position.coords.longitude.toString();
                                         console.log(positionVar);
                                         geocodeLatLng(geocoder, map);
                                     }, function() {
@@ -121,10 +137,6 @@
                                 
                                 new AutocompleteDirectionsHandler(map);
                                 
-                                address.forEach(function(item, index, array) {
-                                    console.log(item, index);
-                                    codeAddress(geocoder, map);
-                                });
                             }
 
                             function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -134,105 +146,105 @@
                                                       'Error: Your browser doesn\'t support geolocation.');
                                 infoWindow.open(map);
                             }
-                        // This example requires the Places library. Include the libraries=places
-                        // parameter when you first load the API. For example:
+                            // This example requires the Places library. Include the libraries=places
+                            // parameter when you first load the API. For example:
 
-                        /**
-                         * @constructor
-                         */
-                        function AutocompleteDirectionsHandler(map) {
-                          this.map = map;
-                          this.originPlaceId = null;
-                          this.destinationPlaceId = null;
-                          this.travelMode = 'DRIVING';
-                          this.directionsService = new google.maps.DirectionsService;
-                          this.directionsDisplay = new google.maps.DirectionsRenderer;
-                          this.directionsDisplay.setMap(map);
+                            /**
+                            * @constructor
+                            */
+                            function AutocompleteDirectionsHandler(map) {
+                                this.map = map;
+                                this.originPlaceId = null;
+                                this.destinationPlaceId = null;
+                                this.travelMode = 'DRIVING';
+                                this.directionsService = new google.maps.DirectionsService;
+                                this.directionsDisplay = new google.maps.DirectionsRenderer;
+                                this.directionsDisplay.setMap(map);
 
-                          var originInput = document.getElementById('origin-input');
-                          var destinationInput = document.getElementById('destination-input');
+                                var originInput = document.getElementById('origin-input');
+                                var destinationInput = document.getElementById('destination-input');
 
-                          var originAutocomplete = new google.maps.places.Autocomplete(originInput);
-                          // Specify just the place data fields that you need.
-                          originAutocomplete.setFields(['place_id']);
+                                var originAutocomplete = new google.maps.places.Autocomplete(originInput);
+                                // Specify just the place data fields that you need.
+                                originAutocomplete.setFields(['place_id']);
+                                
+                                var destinationAutocomplete =
+                                    new google.maps.places.Autocomplete(destinationInput);
+                                // Specify just the place data fields that you need.
+                                destinationAutocomplete.setFields(['place_id']);
+                                this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
+                                this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
+                            }
 
-                          var destinationAutocomplete =
-                              new google.maps.places.Autocomplete(destinationInput);
-                          // Specify just the place data fields that you need.
-                          destinationAutocomplete.setFields(['place_id']);
-                          this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
-                          this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
-                        }
-
-                        AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function(
+                            AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function(
                             autocomplete, mode) {
-                          var me = this;
-                          autocomplete.bindTo('bounds', this.map);
+                                var me = this;
+                                autocomplete.bindTo('bounds', this.map);
 
-                          autocomplete.addListener('place_changed', function() {
-                            var place = autocomplete.getPlace();
-
-                            if (!place.place_id) {
-                              window.alert('Please select an option from the dropdown list.');
-                              return;
-                            }
-                            if (mode === 'ORIG') {
-                                me.originPlaceId = place.place_id;
-                            } else {
-                                me.destinationPlaceId = place.place_id;
-                            }
-                            me.route();
-                          });
-                        };
-                          
-                        AutocompleteDirectionsHandler.prototype.route = function() {
-                          if (!this.originPlaceId || !this.destinationPlaceId) {
-                            return;
-                          }
-                          var me = this;
-
-                          this.directionsService.route(
-                              {
-                                origin: {'placeId': this.originPlaceId},
-                                destination: {'placeId': this.destinationPlaceId},
-                                travelMode: this.travelMode
-                              },
-                              function(response, status) {
-                                if (status === 'OK') {
-                                  me.directionsDisplay.setDirections(response);
-                                } else {
-                                  window.alert('Directions request failed due to ' + status);
+                                autocomplete.addListener('place_changed', function() {
+                                    var place = autocomplete.getPlace();
+                                    
+                                    if (!place.place_id) {
+                                        window.alert('Please select an option from the dropdown list.');
+                                        return;
+                                    }
+                                    if (mode === 'ORIG') {
+                                        me.originPlaceId = place.place_id;
+                                    } else {
+                                        me.destinationPlaceId = place.place_id;
+                                    }
+                                    me.route();
+                                });
+                            };
+                              
+                            AutocompleteDirectionsHandler.prototype.route = function() {
+                                if (!this.originPlaceId || !this.destinationPlaceId) {
+                                    return;
                                 }
-                              });
-                        };
+                                var me = this;
+                                
+                                this.directionsService.route(
+                                    {
+                                        origin: {'placeId': this.originPlaceId},
+                                        destination: {'placeId': this.destinationPlaceId},
+                                        travelMode: this.travelMode
+                                    },
+                                    function(response, status) {
+                                        if (status === 'OK') {
+                                            me.directionsDisplay.setDirections(response);
+                                        } else {
+                                            window.alert('Directions request failed due to ' + status);
+                                        }
+                                    });
+                            };
                             function geocodeLatLng(geocoder, map) {
                                 var input = positionVar;
                                 var latlngStr = input.split(',', 2);
                                 var latlng = {lat: parseFloat(latlngStr[0]), lng: parseFloat(latlngStr[1])};
                                 geocoder.geocode({'location': latlng}, function(results, status) {
-                                  if (status === 'OK') {
-                                    if (results[0]) {
-                                      map.setZoom(13);
-                                      var marker = new google.maps.Marker({
-                                        position: latlng,
-                                        map: map
-                                      });
-                                        console.log("SUCCESS");
-                                        console.log(results);
-                                        placeIDVar = results["0"].place_id;
-                                        console.log(placeIDVar);
-                                        document.getElementById("origin-input").setAttribute("value",   results["0"].formatted_address);
+                                    if (status === 'OK') {
+                                        if (results[0]) {
+                                            map.setZoom(13);
+                                            var marker = new google.maps.Marker({
+                                                position: latlng,
+                                                map: map
+                                            });
+                                            console.log("SUCCESS");
+                                            console.log(results);
+                                            placeIDVar = results["0"].place_id;
+                                            console.log(placeIDVar);
+                                            document.getElementById("origin-input").setAttribute("value",       results["0"].formatted_address);
+                                        } else {
+                                            window.alert('No results found');
+                                        }
                                     } else {
-                                      window.alert('No results found');
+                                        window.alert('Geocoder failed due to: ' + status);
                                     }
-                                  } else {
-                                    window.alert('Geocoder failed due to: ' + status);
-                                  }
                                 });
-                              }
-                            
+                            }
+                                
                             function codeAddress(geocoder, map) {
-                                geocoder.geocode({'address': address[index++]}, function(results, status) {
+                                geocoder.geocode({'address': addressArr[index++]}, function(results, status) {
                                     if (status === 'OK') {
                                         var marker = new google.maps.Marker({
                                             map: map,
