@@ -15,7 +15,6 @@
             ------------------------------------------------------->
             <script src="js/setup_firebase.js"></script>
     </head>
-
     <body>  
             <!------------------------------------------------------
             ----------- Header Section Including the Nav Bar  ------
@@ -52,7 +51,7 @@
                     <img src="images/profile.jpg" id="profile" alt="logo">
                     <div id="summary-text">
                         <div id="summary-lines">
-                        <p>Welcome <span id="username"></span></p>
+                        <p>Welcome <span onload="writeName" id="username"></span></p>
                           
                         <p>Your profile information.</p>
                         <form id="profile" >
@@ -78,8 +77,8 @@
                         <form id="profile">
                         First name: <input type="text" id="firstname" name="firstname"><br>
                         Last name: <input type="text" id="lastname" name="lastname"><br>
-                        Address: <input type="text" id="interest" name="address"> <br>
-                        City: <input type="text" id="interest" name="city"> <br>
+                        Address: <input type="text" id="address" name="address"> <br>
+                        City: <input type="text" id="city" name="city"> <br>
                         <input onclick="submitChanges()" type="submit">    
                         </form>
                         </div>

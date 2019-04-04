@@ -6,6 +6,9 @@ function editProfile() {
 function submitChanges() {
   var firebase = app_firebase;
   var firstname = document.getElementById('firstname').value;    
+  var lastname = document.getElementById('lastname').value;
+  var address = document.getElementById('address').value;
+  var city = document.getElementById('city').value;
 
     // for the current user
     // create this user node in the datebase
@@ -15,7 +18,10 @@ function submitChanges() {
 		{
         "name":user.displayName, 
         "email":user.email,
-        "firstname":firstname    
+        "firstname":firstname,
+        "lastname":lastname,
+        "address":address,
+        "city":city
         });
     });
     
@@ -23,4 +29,14 @@ function submitChanges() {
   document.getElementById("summary-background-edit").style.display = "hidden";
 }
 
-document.getElementById("username").innerHTML = "Bob";
+
+
+
+
+// Get a reference to the database service
+var database = firebase.database();
+var userId = firebase.auth().currentUser.uid;
+return firebase.database().ref('/users/' + userId).once('value').then(function(snapshot) {
+  var username = (snapshot.val() && snapshot.val().name) || 'name';
+  document.getElementById("username").innerHTML = username;
+});
