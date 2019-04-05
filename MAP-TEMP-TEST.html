@@ -44,6 +44,13 @@
                     <li><a class="navcurrent" href="map.html">Map</a></li>
                     <li><a class="navnotcurrent" href="contact.html">Contact</a></li>
                 </ul>
+                
+                <div class="loginbuttons">
+                <button id="signupbutton" class="buttonstyle" style="display: none" onclick="document.getElementById('id01').style.display='block'">Sign Up</button>
+                <button id="loginbutton" class="buttonstyle" style="display: none" onclick="document.getElementById('id01').style.display='block'">Log In</button>
+                <button id="profilebutton" class="buttonstyle" style="display: none">Profile</button> 
+                <button id="logoutbutton" class="buttonstyle" style="display: none">Log Out</button>
+                </div>
             </nav>
             </div>
             </header>    
@@ -52,21 +59,16 @@
             ---------- Main Section - Contents of the Page ---------
             ------------------------------------------------------->
             <main>
-                <div class="loginbuttons">
-                <button id="signupbutton" class="buttonstyle" style="display: none" onclick="document.getElementById('id01').style.display='block'">Sign Up</button>
-                <button id="loginbutton" class="buttonstyle" style="display: none" onclick="document.getElementById('id01').style.display='block'">Log In</button>
-                <button id="profilebutton" class="buttonstyle" style="display: none">Profile</button> 
-                <button id="logoutbutton" class="buttonstyle" style="display: none">Log Out</button>
-                </div>
-                
                 <div id="map-interface">
                     <div id="map-transform">
                         <div id="map-widget-transform">
                             <div id="map-widget">
                                 <div id="search-bar-transform">
                                     <div id="search-bar-background">
+                                        <div id="origin-text">Orgin Location</div>
                                         <input id="origin-input" class="search-bar" type="text"
                                             placeholder="Enter an origin location">
+                                        <div id="destination-text">Destination Location</div>
                                         <input id="destination-input" class="search-bar" type="text"
                                             placeholder="Enter a destination location">
                                     </div>
@@ -92,7 +94,7 @@
     
                                 // Variables for JSON object and the address string array.    
                                 var myObject = snapshot.val();
-                                addressArr = [];    
+                                addressArr = [];
                                     
                                 // Grabs the address value from each JSON object.
                                 // ----------- Puts each address into a String Array ---------- //    
@@ -251,23 +253,13 @@
                                             position: results["0"].geometry.location
                                         });
                                         marker.addListener('click', function() {
-                                            console.log("Click")
-                                            var parent = document.getElementById("search-bar-background");
-                                            var child = document.getElementById("destination-input");
-                                            var NewDestInput = document.createElement("input");
-                                            NewDestInput.setAttribute("id", "destination-input");
-                                            NewDestInput.setAttribute("class", "search-bar");
-                                            NewDestInput.setAttribute("type", "text");
-                                            NewDestInput.setAttribute("placeholder", "Enter a destination location");
-                                            parent.removeChild(child);
-                                            parent.appendChild(NewDestInput);
-                                            directionsDisplay.setMap(null);
-                                            new AutocompleteDirectionsHandler(map);
-                                            directionsDisplay.setMap(map);
+                                            console.log("Click");
                                             document.getElementById("destination-input").setAttribute("value",       results["0"].formatted_address);
+                                            document.getElementById("search-text").innerHTML = results["0"].formatted_address;
+                                            document.getElementById("search-text").innerHTML = index;
                                         });
                                     } else {
-                                        alert('Geocode was not successful for the following reason: ' + status);
+                                        console.log('Geocode was not successful for the following reason: ' + status);
                                     }
                                 });
                             }
@@ -348,4 +340,4 @@
                 </form>
             </div>
     </body>   
-</html>s
+</html>

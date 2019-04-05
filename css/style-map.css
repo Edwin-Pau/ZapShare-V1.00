@@ -3,11 +3,13 @@
     background-color: #f1f4f6;
     height: 80vh;
     display: grid;
+    margin: 0 auto;
+    padding: 0;
 }
 
 #map-transform {
-    margin: 5px auto;
-    width: 95%;
+    margin: 0 auto;
+    width: 100%;
     position: relative;
 }
 #map {
@@ -19,10 +21,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #f5f5ff;
-    -moz-box-shadow: inset 1px 1px 3px -3px black;
-    -webkit-box-shadow: inset 1px 1px 3px -3px black;
-    box-shadow: inset 1px 1px 3px 0px black;
+    background-color: #ffffff;
     z-index: 1;
 }
 #map-widget-transform {
@@ -38,13 +37,15 @@
 .search-bar {
     position: relative;
     width: 70%;
-    font-size: 16pt;
+    height: 4vh;
+    font-size: 0.6em;
     border-radius: 9px;
     border: 2px solid #32CD32;
     background-color: #e0ffff;
     font-weight: 300;
     margin-left: 12px;
     padding: 0 11px 0 13px;
+    margin-bottom: 2vh;
 }
 #search-text-transform {
     position: relative;
@@ -54,14 +55,28 @@
 #search-text {
     position: relative;
     font-size: 16pt;
+    margin-left: 10%;
+    margin-right: 10%;
 }
-
 #origin-input,
 #destination-input {
 
-}
-    
+} 
 #origin-input:focus,
 #destination-input:focus {
     border-color: #4d90fe;
+}
+#destination-text {
+    font-size: 10pt;
+    position: absolute;
+    left: 13.5%;
+    bottom: 6.5vh;
+    color: #515151;
+}
+#origin-text {
+    font-size: 10pt;
+    position: absolute;
+    left: 13.5%;
+    bottom: 14vh;
+    color: #515151;
 }

@@ -65,8 +65,10 @@
                             <div id="map-widget">
                                 <div id="search-bar-transform">
                                     <div id="search-bar-background">
+                                        <div id="origin-text">Orgin Location</div>
                                         <input id="origin-input" class="search-bar" type="text"
                                             placeholder="Enter an origin location">
+                                        <div id="destination-text">Destination Location</div>
                                         <input id="destination-input" class="search-bar" type="text"
                                             placeholder="Enter a destination location">
                                     </div>
@@ -251,10 +253,12 @@
                                             position: results["0"].geometry.location
                                         });
                                         marker.addListener('click', function() {
-                                            console.log("Click")
+                                            console.log("Click");
+                                            document.getElementById("destination-input").setAttribute("value",       results["0"].formatted_address);
+                                            document.getElementById("search-text").innerHTML = results["0"].formatted_address;
                                         });
                                     } else {
-                                        alert('Geocode was not successful for the following reason: ' + status);
+                                        console.log('Geocode was not successful for the following reason: ' + status);
                                     }
                                 });
                             }
