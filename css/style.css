@@ -56,8 +56,8 @@ header {
 }
 
 #logo2 {
-    width: 59%;
-    height: 59%;
+    width: 35%;
+    height: 35%;
 }
 
 /* ------------------------------- Classes ----------------------------- */
@@ -102,6 +102,11 @@ header {
 
 .wrapper2 {
     width: 50%;
+    margin: 0 auto;
+}
+
+.wrapper3 {
+    width: 65%;
     margin: 0 auto;
 }
 
@@ -220,14 +225,19 @@ nav a:hover {
 /* ---------------------- Box Style -------------------------- */
 
 .homebox {
-    height: 30vh;
-    width: 17vw;
+    height: 32vh;
+    width: 75%;
     margin-left: auto;
     margin-right: auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 10px 40px 0 rgba(0, 0, 0, 0.19);
-    background-color: #F1f4f6;
+    background-color: #FFF;
     margin-top: 5vh;
     margin-bottom: 5vh;
+}
+
+.homebox:hover {
+    cursor: pointer;
+    transform: translate(3%, -3%);
 }
 
 .homeicons {
@@ -236,23 +246,32 @@ nav a:hover {
 }
 
 .boxheading {
-    font-size: 36px;
+    font-size: 1em;
     color: #4D4D4D;
     text-align: center;
-    margin: auto;
+    margin: 0 auto;
+    padding-top: 3vh;
+    padding-bottom: 1vh;
+    width: 85%;
+}
+
+.boximage {
+    text-align: center;
+    width: 85%;
+    padding-bottom: 1vh;
     border-bottom: 2px solid #32CD32;
-    width: 80%;
-    padding: 30px 0;
+    margin: 0 auto;
 }
 
 .boxparagraph {
-    font-size: 18px;
+    font-size: 0.45em;
     color: #4D4D4D;
     text-align: center;
-    width: 80%;
+    width: 85%;
     margin: auto;
-    padding-top: 30px;
-    line-height: 20px;
+    padding-top: 2vh;
+    line-height: 3vh;
+    padding-bottom: 3vh;
 }
 
 /* ---------------------- Grid Layout ----------------------- */

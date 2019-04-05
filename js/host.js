@@ -21,13 +21,17 @@ function saveHostDetails() {
     
     // Variables for JSON object and the address string array.    
     var myObject = snapshot.val();
-    var addressArr = [];    
+    var addressArr = [];
     
     // Grabs the address value from each JSON object.
     // ----------- Puts each address into a String Array ---------- //    
     for (value in myObject) {
         addressArr.push(myObject[value].address);
     }
+        
+    console.log(myObject);
+        
+        
     });
 }
 
