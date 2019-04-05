@@ -233,16 +233,18 @@ nav a:hover {
     background-color: #FFF;
     margin-top: 5vh;
     margin-bottom: 5vh;
+    transition-duration: 0.4s;
 }
 
 .homebox:hover {
     cursor: pointer;
-    transform: translate(3%, -3%);
+    transform: translate(0%, -5%);
+    transition-duration: 0.4s;
 }
 
 .homeicons {
-    height: 100px;
-    width: 100px;
+    height: 11vh;
+    width: 11vw;
 }
 
 .boxheading {
@@ -252,7 +254,8 @@ nav a:hover {
     margin: 0 auto;
     padding-top: 3vh;
     padding-bottom: 1vh;
-    width: 85%;
+    width: 15vw;
+    height: 5vh;
 }
 
 .boximage {
