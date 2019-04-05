@@ -21,6 +21,7 @@ function saveHostDetails() {
     });
     document.getElementById("host-details").style.display = "block";
     document.getElementById("host-details-edit").style.display = "none";
+
 }
   
 
