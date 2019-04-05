@@ -11,6 +11,7 @@
         <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
         <link rel="stylesheet" type="text/css" media="screen" href="css/form.css">
         <link rel="stylesheet" type="text/css" media="screen" href="css/LoginButton.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="css/contactus.css">
         
             <!------------------------------------------------------
             ------------------  Sets up FireBase  ------------------
@@ -53,17 +54,20 @@
                     <img src="images/profile.jpg" id="profile" alt="logo">
                     <div id="summary-text">
                         <div id="summary-lines">
-                        <p>Welcome <span id="dbusername"></span></p>                         
-                        <p>Your profile information.</p>
+                        <p id="welcome">Welcome <span id="dbusername"></span></p>
+                        <fieldset>
+                        <legend>Your profile</legend>
+<!--                        <p>Welcome <span id="dbusername"></span></p> -->
                         <form id="profile" >
                         First name: <span class="proinfo" id="dbfirstname" name="firstname"></span><br>
                         Last name: <span class="proinfo" id="dblastname" name="lastname"></span><br>
                         Address: <span class="proinfo" id="dbaddress" name="address"></span> <br>
                         City: <span class="proinfo" id="dbcity" name="city"></span> <br>
-                            <button class="buttonstyle" onclick="editProfile()" id="editpro1" type="button">Edit</button>   
-
+                        <button class="buttonstyle" onclick="editProfile()" id="editpro1" type="button">Edit</button>   
                         </form>
+                        </fieldset>
                         </div>
+                        
                     </div>
                 </div>
                 
@@ -73,17 +77,20 @@
                 <div id="summary-background-edit" >
                     <img src="images/profile.jpg" id="profile" alt="logo">
                     <div id="summary-text">
-                        <div id="summary-lines">   
-                        <p>Enter or edit profile information.</p>
+                        <div id="summary-lines"> 
+                        <fieldset>
+                        <legend>Your information</legend>
                         <form id="profile">
-                        First name <br><input class="newinfo" type="text" id="firstname" name="firstname"><br>
-                        Last name <br><input class="newinfo" type="text" id="lastname" name="lastname"><br>
-                        Address <br><input class="newinfo" type="text" id="address" name="address"> <br>
-                        City <br><input class="newinfo" type="text" id="city" name="city"> <br>
+                        First name <input class="formrow" type="text" id="firstname" name="firstname"><br>
+                        Last name <input class="newinfo" type="text" id="lastname" name="lastname"><br>
+                        Address <input class="newinfo" type="text" id="address" name="address"> <br>
+                        City <input class="newinfo" type="text" id="city" name="city"> <br>
                         <input class="buttonstyle" id='submit' onclick="submitChanges()" type="submit">    
                         </form>
-                        </div>
+                        </fieldset>
+                        </div>      
                     </div>
+                    
                 </div>
             </main>
             
