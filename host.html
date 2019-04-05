@@ -12,6 +12,7 @@
         <link rel="stylesheet" type="text/css" media="screen" href="css/form.css">
         <link rel="stylesheet" type="text/css" media="screen" href="css/contactus.css">
         
+        
             <!------------------------------------------------------
             ------------------  Sets up FireBase  ------------------
             ------------------------------------------------------->
@@ -61,15 +62,15 @@
                         <div id="summary-lines">
                         <p id="welcome">Welcome <span id="dbusername"></span></p>  
                         <fieldset>
-                        <legend>Your Charger Location Details:</legend>
+                        <legend>Your Charger Location Details</legend>
                         <form id="profile" >
-                        <label for="hostname">Host Name:</label>
+                        <label for="hostname">Host Name</label><br>
                         <span class="proinfo" id="hostname" name="hostname"></span><br>
-                        <label for="hostphonenum">Host Phone Number:</label>
+                        <label for="hostphonenum">Host Phone Number</label><br>
                         <span class="proinfo" id="hostphonenum" name="hostphonenum"></span><br> 
-                        <label for="hostaddress">Host Address:</label>
+                        <label for="hostaddress">Host Address</label><br>
                         <span class="proinfo" id="hostaddress" name="hostaddress"></span><br>  
-                        <label for="hostcity">Host City:</label>
+                        <label for="hostcity">Host City</label><br>
                         <span class="proinfo" id="hostcity" name="hostcity"></span><br>  
                         <button id="editpro1" class="buttonstyle" onclick="editHostDetails()" type="button">Edit</button>
                         </form>
@@ -81,24 +82,35 @@
                 <!------------------------------------------------------
                 ----------- Edits Host Location Information ------------
                 ------------------------------------------------------->
-                <div id="host-details-edit">
+                             
+                <div id="host-details-edit"> 
                     <img src="images/profile.jpg" id="profile" alt="logo">
                     <div id="summary-text">
                         <div id="summary-lines">
-                            <fieldset>
-                        <legend>Your information</legend>
-                        <p>Edit Your Host Location Details:</p>
-                        <form id="profile">
-                        <label for="hostname">Host Name:</label>
-                        <input class="proinfo" id="dbhostname" name="hostname"><br>
-                        <label for="hostphonenum">Host Phone Number:</label>
-                        <input class="proinfo" id="dbhostphonenum" name="hostphonenum"><br>
-                        <label for="hostaddress">Host Address:</label>
-                        <input class="proinfo" id="dbhostaddress" name="hostaddress"><br>
-                        <label for="hostcity">Host City:</label>
-                        <input class="proinfo" id="dbhostcity" name="hostcity"><br>
-                        <button class="buttonstyle" onclick="saveHostDetails()" type="button">Submit</button>
-                        </form>
+                        <fieldset>
+                            <legend>Edit Your Host Location Details</legend>
+                            <form id="profile">
+                            <label for="hostname">Host Name</label><br>
+                            <input class="newinfo" id="dbhostname" name="hostname"><br>
+                            <label for="hostphonenum">Host Phone Number</label><br>
+                            <input class="newinfo" id="dbhostphonenum" name="hostphonenum"><br>
+                            <label for="hostaddress">Host Address</label><br>
+                            <input class="newinfo" id="dbhostaddress" name="hostaddress"><br>
+                            <label for="hostcity">Host City</label><br>
+                            <input class="newinfo" id="dbhostcity" name="hostcity"><br>
+                                <label>Select your charger type</label><br>
+                            <div class="dropdown">
+                               <button onclick="dropDownButton()" class="dropbtn">Charger Level</button>
+                               <div id="myDropdown" class="dropdown-content">
+                               <a>Link 1</a>
+                               <a>Link 2</a>
+                               <a>Link 3</a>
+                               </div>
+                            </div><br>
+                            <label for="chargerinfo">Additional info</label><br>
+                            <input class="newinfo" id="chargerinfo" name="hostcity"><br>
+                            <button class="buttonstyle" onclick="saveHostDetails()" type="button">Submit</button>
+                            </form>
                         </fieldset>
                         </div>
                     </div>
