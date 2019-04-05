@@ -9,6 +9,8 @@
         <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
         <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
         <link rel="stylesheet" type="text/css" media="screen" href="css/LoginButton.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="css/form.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="css/contactus.css">
         
             <!------------------------------------------------------
             ------------------  Sets up FireBase  ------------------
@@ -50,28 +52,28 @@
                 <!------------------------------------------------------
                 ----------- Displays Current Host Information ----------
                 ------------------------------------------------------->
+                
+                
+                
                 <div id="host-details">
                     <img src="images/profile.jpg" id="profile" alt="logo">
                     <div id="summary-text">
                         <div id="summary-lines">
-                        <p>Welcome <span onload="writeName" id="username"></span></p>  
-                        <p>Your Charger Location Details:</p>
+                        <p id="welcome">Welcome <span id="dbusername"></span></p>  
+                        <fieldset>
+                        <legend>Your Charger Location Details:</legend>
                         <form id="profile" >
                         <label for="hostname">Host Name:</label>
                         <span class="proinfo" id="hostname" name="hostname"></span><br>
-
                         <label for="hostphonenum">Host Phone Number:</label>
-                        <span class="proinfo" id="hostphonenum" name="hostphonenum"></span><br>
-                            
+                        <span class="proinfo" id="hostphonenum" name="hostphonenum"></span><br> 
                         <label for="hostaddress">Host Address:</label>
-                        <span class="proinfo" id="hostaddress" name="hostaddress"></span><br>
-                            
+                        <span class="proinfo" id="hostaddress" name="hostaddress"></span><br>  
                         <label for="hostcity">Host City:</label>
-                        <span class="proinfo" id="hostcity" name="hostcity"></span><br>
-                            
-                        <button onclick="editHostDetails()" type="button">Edit Details</button>
+                        <span class="proinfo" id="hostcity" name="hostcity"></span><br>  
+                        <button id="editpro1" class="buttonstyle" onclick="editHostDetails()" type="button">Edit</button>
                         </form>
-                            
+                        </fieldset>    
                         </div>
                     </div>
                 </div>
@@ -83,28 +85,26 @@
                     <img src="images/profile.jpg" id="profile" alt="logo">
                     <div id="summary-text">
                         <div id="summary-lines">
-                        <p>Welcome <span onload="writeName" id="username"></span></p>  
+                            <fieldset>
+                        <legend>Your information</legend>
                         <p>Edit Your Host Location Details:</p>
                         <form id="profile">
                         <label for="hostname">Host Name:</label>
                         <input class="proinfo" id="dbhostname" name="hostname"><br>
-
                         <label for="hostphonenum">Host Phone Number:</label>
                         <input class="proinfo" id="dbhostphonenum" name="hostphonenum"><br>
-                            
                         <label for="hostaddress">Host Address:</label>
                         <input class="proinfo" id="dbhostaddress" name="hostaddress"><br>
-                            
                         <label for="hostcity">Host City:</label>
                         <input class="proinfo" id="dbhostcity" name="hostcity"><br>
-                        
-                        <button onclick="saveHostDetails()" type="button">Save Changes</button>
+                        <button class="buttonstyle" onclick="saveHostDetails()" type="button">Submit</button>
                         </form>
+                        </fieldset>
                         </div>
                     </div>
                 </div>
             </main>
-            
+        
             <!------------------------------------------------------
             ---------- Footer Section - Links to Subpages ----------
             ------------------------------------------------------->
@@ -179,5 +179,10 @@
             ------ JavaScript for Checking User Is Logged In -------
             ------------------------------------------------------->
             <script src="js/checkauthstate.js"></script>
+        
+            <!------------------------------------------------------
+            ------ JavaScript for Updating and reading info --------
+            ------------------------------------------------------->
+            <script src="js/profile.js"></script>
     </body>   
 </html>

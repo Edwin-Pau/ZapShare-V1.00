@@ -1,7 +1,7 @@
 /* ---------------------------- Form Styling -------------------------------- */
 .labelcol {
-    width: 6vw;
-    font-weight: bold
+    width: 10%;
+    font-weight: bold;
 }
 
 input[type=text]:focus {
@@ -11,8 +11,12 @@ input[type=text]:focus {
 
 input {
     height: 2vh;
+    border: 1px solid #aaa;
     border-radius: 5px;
     font-size: 1.3em;
+    margin-top: 2vh;
+    padding: 0.7vh;
+    width: 15vw;
 }
 
 label, input {
@@ -21,7 +25,8 @@ label, input {
 
 label {
     text-align: right;
-    margin: 0 0.8vw;
+    margin: 0 auto;
+    padding-right: 1.8vw;
     font-size: 1.3em;
 }
 
@@ -29,12 +34,17 @@ input {
     outline-color: #32CD32;
 }
 
-select:active, select:hover {
+select, select:active, select:hover {
     outline-color: #32CD32;
+    width: 22vw;
+    margin: 2vh 0;
 }
 
 textarea {
     outline-color: #32CD32;
+    margin: 2vh 0;
+    width: 22vw;
+    height: 22vh;
 }
 
 form {
@@ -43,9 +53,9 @@ form {
 }
 
 .formrow {
-    margin: 1vh 0;
+    margin-bottom: 1.2vh;
     color: #555;
-    font-size: 14px;
+    font-size: 0.5em;
 }
 
 #formsubmit {

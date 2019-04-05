@@ -8,12 +8,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
         <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
-        <link rel="stylesheet" type="text/css" media="screen" href="css/homestyle.css">
         <link rel="stylesheet" type="text/css" media="screen" href="css/LoginButton.css">
-        <!------------------------------------------------------
-        ------------------  Sets up FireBase  ------------------
-        ------------------------------------------------------->
-        <script src="js/setup_firebase.js"></script>
+            <!------------------------------------------------------
+            ------------------  Sets up FireBase  ------------------
+            ------------------------------------------------------->
+            <script src="js/setup_firebase.js"></script>
     </head>
 
     <body>
@@ -26,7 +25,7 @@
                 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>
                 </div>
                 <div class="container">
-                    <img src="images/logo.png" alt="logo" id="logo2">
+                    <img src="images/account.svg" alt="logo" id="logo2">
                     <div id="firebaseui-auth-container"></div>
                     <div id="loader">Loading...</div>  
                 </div>
@@ -51,7 +50,7 @@
                 <div class="loginbuttons">
                 <button id="signupbutton" class="buttonstyle" style="display: none" onclick="document.getElementById('id01').style.display='block'">Sign Up</button>
                 <button id="loginbutton" class="buttonstyle" style="display: none" onclick="document.getElementById('id01').style.display='block'">Log In</button>
-                <button id="profilebutton" class="buttonstyle" style="display: none">Profile</button> 
+                <button id="profilebutton" class="buttonstyle" style="display: none">Account</button> 
                 <button id="logoutbutton" class="buttonstyle" style="display: none">Log Out</button>
                 </div>
             </header>
@@ -71,20 +70,23 @@
                     </div>
                 </div>    
                     
-                    <div class="wrapper threecolumns whitebackground">
-                            <div class="homebox">
-                            <div class="boxheading">Title 1<img class="homeicons" src="" alt="homeicon1"></div>
-                            <div class="boxparagraph">Title 1</div>
+                    <div class="wrapper3 threecolumns whitebackground">
+                            <div class="homebox" onclick="window.location.href='map.html'">
+                            <div class="boxheading">Save Time</div>
+                            <div class="boximage"><img class="homeicons" src="images/savetime.svg" alt="homeicon1"></div> 
+                            <div class="boxparagraph">Your time is valuable, keep your EV charged anywhere you go.</div>
+                            </div>
+                        
+                            <div class="homebox" onclick="document.getElementById('id01').style.display='block'">
+                            <div class="boxheading">Go Green</div>
+                            <div class="boximage"><img class="homeicons" src="images/community.svg" alt="homeicon2"></div>
+                            <div class="boxparagraph">Support other EV owners and join our growing community.</div>
                             </div>
 
-                            <div class="homebox">
-                            <div class="boxheading">Title 2<img class="homeicons" src="" alt="homeicon2"></div>
-                            <div class="boxparagraph">Title 2</div>
-                            </div>
-
-                            <div class="homebox">
-                            <div class="boxheading">Title 3<img class="homeicons" src="./index_files/resourcesicon.png" alt="resources"></div>
-                            <div class="boxparagraph">Title 3</div>
+                            <div class="homebox" onclick="document.getElementById('id01').style.display='block'">
+                            <div class="boxheading">Earn Cash</div>
+                            <div class="boximage"><img class="homeicons" src="images/getpaid.svg" alt="homeicon3"></div>
+                            <div class="boxparagraph">Offer your EV charger on ZapShare and start earning cash!</div>
                             </div>
                     </div>
                     
@@ -99,7 +101,7 @@
                     <div class="footercolumn">
                         <div class="footertitle">Quick Links</div>
                         <ul>
-                            <li><a href="sitemap.html">Site Map</a></li>
+                            <li><a href="">Site Map</a></li>
                         </ul>
                     </div>
 
@@ -115,7 +117,7 @@
                     <div class="footercolumn">
                         <div class="footertitle">Support</div>
                         <ul>
-                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="">FAQ</a></li>
                             <li><a href="contact.html">Contact Us</a></li>
                         </ul>
                     </div>
@@ -124,8 +126,8 @@
                         <div class="footertitle">About</div>
                         <ul>
                             <li><a href="about.html">About Us</a></li>
-                            <li><a href="team.html">Meet the Team</a></li>
-                            <li><a href="jointeam.html">Join the Team</a></li>
+                            <li><a href="">Facebook</a></li>
+                            <li><a href="jointeam.html">Instagram</a></li>
                         </ul>
                     </div>
                 </div>
