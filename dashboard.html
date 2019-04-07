@@ -9,6 +9,7 @@
         <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
         <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
         <link rel="stylesheet" type="text/css" media="screen" href="css/LoginButton.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="css/dashboard.css">
         
             <!------------------------------------------------------
             ------------------  Sets up FireBase  ------------------
@@ -33,7 +34,7 @@
                 <div class="loginbuttons">
                 <button id="signupbutton" class="buttonstyle" style="display: none" onclick="document.getElementById('id01').style.display='block'">Sign Up</button>
                 <button id="loginbutton" class="buttonstyle" style="display: none" onclick="document.getElementById('id01').style.display='block'">Log In</button>
-                <button id="profilebutton" class="buttonstyle" style="display: none">Profile</button> 
+                <button id="profilebutton" class="buttonstyle" style="display: none">Account</button> 
                 <button id="logoutbutton" class="buttonstyle" style="display: none">Log Out</button>
                 </div>
             </nav>
@@ -44,6 +45,30 @@
             ---------- Main Section - Contents of the Page ---------
             ------------------------------------------------------->
             <main>
+                    <div class="headerimagecontainer">
+                        <img src="images/profile.jpg" class="headerimage" alt="logo">
+                        <div class="headertext">
+                            Account
+                        </div>
+                    </div>
+                
+                    <div class="dashbox1" onclick="window.location.href='profile.html'">
+                        <div class="dashheading">Edit Profile</div>
+                        <div class="dashimage"><img class="homeicons" src="images/savetime.svg" alt="homeicon1"></div> 
+                        <div class="dashparagraph">Your time is valuable, keep your EV charged anywhere you go.</div>
+                    </div>
+                        
+                    <div class="homebox" onclick="document.getElementById('id01').style.display='block'">
+                        <div class="boxheading">Register Your Charger</div>
+                        <div class="boximage"><img class="homeicons" src="images/community.svg" alt="homeicon2"></div>
+                        <div class="boxparagraph">Support other EV owners and join our growing community.</div>
+                    </div>
+
+                    <div class="homebox" onclick="document.getElementById('id01').style.display='block'">
+                        <div class="boxheading">Payment Settings</div>
+                        <div class="boximage"><img class="homeicons" src="images/getpaid.svg" alt="homeicon3"></div>
+                        <div class="boxparagraph">Offer your EV charger on ZapShare and start earning cash!</div>
+                    </div>
                 <!------------------------------------------------------
                 --------------- Displays Dashboard Options -------------
                 ------------------------------------------------------->
@@ -53,7 +78,6 @@
                         <div id="summary-lines">    
                         
                         </div>
-                        
                     </div>
                 </div>
             </main>

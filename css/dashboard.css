@@ -1,0 +1,68 @@
+/* ---------------------- Box Style -------------------------- */
+
+.dashbox1 {
+    height: 32vh;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 10px 40px 0 rgba(0, 0, 0, 0.19);
+    background-color: #6279B8;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    transition-duration: 0.4s;
+    border-radius: 25px;
+}
+
+.dashbox2 {
+    height: 32vh;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 10px 40px 0 rgba(0, 0, 0, 0.19);
+    background-color: #FFF;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    transition-duration: 0.4s;
+    border-radius: 25px;
+}
+
+.dashbox1:hover {
+    cursor: pointer;
+    transform: translate(0%, -5%);
+    transition-duration: 0.4s;
+}
+
+.dashicons {
+    height: 11vh;
+    width: 11vw;
+}
+
+.dashheading {
+    font-size: 1em;
+    color: #fff;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 3vh;
+    padding-bottom: 1vh;
+    width: 15vw;
+    height: 5vh;
+}
+
+.dashimage {
+    text-align: center;
+    width: 85%;
+    padding-bottom: 1vh;
+    border-bottom: 2px solid #fff;
+    margin: 0 auto;
+}
+
+.dashparagraph {
+    font-size: 0.45em;
+    color: #fff;
+    text-align: center;
+    width: 85%;
+    margin: auto;
+    padding-top: 2vh;
+    line-height: 3vh;
+    padding-bottom: 3vh;
+}

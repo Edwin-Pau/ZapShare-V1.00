@@ -234,6 +234,7 @@ nav a:hover {
     margin-top: 5vh;
     margin-bottom: 5vh;
     transition-duration: 0.4s;
+    border-radius: 25px;
 }
 
 .homebox:hover {
