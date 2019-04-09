@@ -34,7 +34,7 @@ header {
     transform: translate(-50%, -50%);
     color: #fff;
     text-shadow: 3px 3px 2px #333;
-    font-size: 2.6em;
+    font-size: 1.4em;
 }
 
 .headerimage {
@@ -110,6 +110,10 @@ header {
     margin: 0 auto;
 }
 
+.paraSizeText {
+    font-size: 0.6em;
+}
+
     /* -------------------------- Nav Style -------------------------- */
 #navbar {
     width: 75%;
@@ -154,8 +158,15 @@ nav a:hover {
 #summary-background {
     margin-top: 12vh;
     width: 100%;
-    font-size: 24px;
-    line-height: 35px;
+    line-height: 5vh;
+    color: #333;
+    background-color: #f1f4f6;
+}
+
+#dashboard-background {
+    margin-top: 12vh;
+    font-size: 0.6em;
+    line-height: 5vh;
     color: #333;
     background-color: #f1f4f6;
 }
@@ -190,7 +201,7 @@ nav a:hover {
 }
 
 #summary-text {
-    font-size: 1.1em;
+    font-size: 0.7em;
     color: #383838;
     width: 75%;
     text-align: center;
@@ -225,7 +236,7 @@ nav a:hover {
 /* ---------------------- Box Style -------------------------- */
 
 .homebox {
-    height: 32vh;
+    height: 42vh;
     width: 75%;
     margin-left: auto;
     margin-right: auto;
@@ -235,12 +246,23 @@ nav a:hover {
     margin-bottom: 5vh;
     transition-duration: 0.4s;
     border-radius: 25px;
+    color: #4D4D4D;
 }
 
 .homebox:hover {
     cursor: pointer;
     transform: translate(0%, -5%);
     transition-duration: 0.4s;
+    color: #fff;
+    background-color: #26A96C;
+}
+
+.homebox:hover .boximage{
+    text-align: center;
+    width: 85%;
+    padding-bottom: 1vh;
+    border-bottom: 2px solid #FFF;
+    margin: 0 auto;
 }
 
 .homeicons {
@@ -250,10 +272,9 @@ nav a:hover {
 
 .boxheading {
     font-size: 1em;
-    color: #4D4D4D;
     text-align: center;
     margin: 0 auto;
-    padding-top: 3vh;
+    padding-top: 4vh;
     padding-bottom: 1vh;
     width: 15vw;
     height: 5vh;
@@ -269,7 +290,6 @@ nav a:hover {
 
 .boxparagraph {
     font-size: 0.45em;
-    color: #4D4D4D;
     text-align: center;
     width: 85%;
     margin: auto;

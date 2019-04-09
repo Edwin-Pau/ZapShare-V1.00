@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>ZapShare</title>
+        <title>ZapShare - Dashboard</title>
         <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
         <script src="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.js"></script>
         <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
@@ -45,41 +45,35 @@
             ---------- Main Section - Contents of the Page ---------
             ------------------------------------------------------->
             <main>
-                    <div class="headerimagecontainer">
+                <div class="headerimagecontainer">
                         <img src="images/profile.jpg" class="headerimage" alt="logo">
                         <div class="headertext">
                             Account
                         </div>
-                    </div>
-                
+                    </div> 
+                  
+                    <!------------------------------------------------------
+                    --------------- Displays Dashboard Options -------------
+                    ------------------------------------------------------->
+                    <div class="threecolumns wrapper3">
                     <div class="dashbox1" onclick="window.location.href='profile.html'">
-                        <div class="dashheading">Edit Profile</div>
-                        <div class="dashimage"><img class="homeicons" src="images/savetime.svg" alt="homeicon1"></div> 
-                        <div class="dashparagraph">Your time is valuable, keep your EV charged anywhere you go.</div>
+                        <div class="dashheading">Edit User Profile</div>
+                        <div class="dashimage"><img class="homeicons" src="images/settings.svg" alt="dashicon1"></div> 
+                        <div class="dashparagraph">Edit your user profile to keep your ZapShare account up-to-date.</div>
                     </div>
                         
-                    <div class="homebox" onclick="document.getElementById('id01').style.display='block'">
-                        <div class="boxheading">Register Your Charger</div>
-                        <div class="boximage"><img class="homeicons" src="images/community.svg" alt="homeicon2"></div>
-                        <div class="boxparagraph">Support other EV owners and join our growing community.</div>
+                    <div class="dashbox2" onclick="window.location.href='host.html'">
+                        <div class="dashheading">Host Your Charger</div>
+                        <div class="dashimage"><img class="homeicons" src="images/location.svg" alt="dashicon2"></div>
+                        <div class="dashparagraph">Host a charger on the ZapShare network by entering your location details.</div>
                     </div>
 
-                    <div class="homebox" onclick="document.getElementById('id01').style.display='block'">
-                        <div class="boxheading">Payment Settings</div>
-                        <div class="boximage"><img class="homeicons" src="images/getpaid.svg" alt="homeicon3"></div>
-                        <div class="boxparagraph">Offer your EV charger on ZapShare and start earning cash!</div>
+                    <div class="dashbox3">
+                        <div class="dashheading">Payment Settings</div>
+                        <div class="dashimage"><img class="homeicons" src="images/wallet.svg" alt="dashicon3"></div>
+                        <div class="dashparagraph">View your wallet balance and change your payment options and settings. </div>
                     </div>
-                <!------------------------------------------------------
-                --------------- Displays Dashboard Options -------------
-                ------------------------------------------------------->
-                <div id="summary-background-edit">
-                    <img src="images/profile.jpg" id="profile" alt="logo">
-                    <div id="summary-text">
-                        <div id="summary-lines">    
-                        
-                        </div>
                     </div>
-                </div>
             </main>
             
             <!------------------------------------------------------
@@ -90,7 +84,7 @@
                     <div class="footercolumn">
                         <div class="footertitle">Quick Links</div>
                         <ul>
-                            <li><a href="sitemap.html">Site Map</a></li>
+                            <li><a href="">Site Map</a></li>
                         </ul>
                     </div>
 
@@ -106,7 +100,7 @@
                     <div class="footercolumn">
                         <div class="footertitle">Support</div>
                         <ul>
-                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="">FAQ</a></li>
                             <li><a href="contact.html">Contact Us</a></li>
                         </ul>
                     </div>
@@ -115,8 +109,8 @@
                         <div class="footertitle">About</div>
                         <ul>
                             <li><a href="about.html">About Us</a></li>
-                            <li><a href="team.html">Meet the Team</a></li>
-                            <li><a href="jointeam.html">Join the Team</a></li>
+                            <li><a href="">Facebook</a></li>
+                            <li><a href="">Instagram</a></li>
                         </ul>
                     </div>
                 </div>
@@ -124,6 +118,7 @@
                     <br>
                     &copy; 2019 ZapShare, All Rights Reserved.</div>
             </footer>
+        
             <!------------------------------------------------------
             ---- JavaScript for Updating User Profile into DB ------
             ------------------------------------------------------->
