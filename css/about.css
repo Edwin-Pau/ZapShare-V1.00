@@ -1,0 +1,91 @@
+.w3-red,.w3-hover-red:hover{
+    color: #fff!important;
+    background-color:#32CD32!important
+}
+
+.w3-container:after,.w3-container:before{
+    content:"";
+    display:table;
+    clear:both;
+}
+
+.w3-light-grey,.w3-hover-light-grey:hover,.w3-light-gray,.w3-hover-light-gray:hover{
+    color:#000!important;
+    background-color:#d8d8d8!important
+}
+
+.w3-center .w3-bar{
+    display:inline-block;
+    width:auto;
+}
+
+.w3-center .w3-bar-item{
+    text-align: center;
+}
+
+.aboutUsText {
+    font-size: 0.55em;
+    line-height: 4.5vh;
+    color: #3e3e3e;
+}
+
+.aboutbox {
+    height: 46vh;
+    width: 90%;
+    margin: 3vh auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 10px 40px 0 rgba(0, 0, 0, 0.19);
+    background-color: #FFF;
+    transition-duration: 0.4s;
+    border-radius: 25px;
+    color: #4D4D4D;
+    margin-bottom: 5vh;
+}
+
+.aboutbox:hover {
+    transform: translate(0%, -3%);
+    transition-duration: 0.4s;
+    color: #fff;
+    background-color: #26A96C;
+}
+
+.aboutbox:hover .aboutimage{
+    text-align: center;
+    width: 85%;
+    padding-bottom: 1vh;
+    border-bottom: 2px solid #FFF;
+    margin: 0 auto;
+}
+
+.abouticons {
+    height: 11vh;
+    width: 11vw;
+}
+
+.aboutheading {
+    font-size: 0.6em;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 4vh;
+    padding-bottom: 1vh;
+    width: 12vw;
+    height: 5vh;
+    margin-bottom: 3vh;
+}
+
+.aboutimage {
+    text-align: center;
+    width: 85%;
+    padding-bottom: 1vh;
+    border-bottom: 2px solid #32CD32;
+    margin: 0 auto;
+}
+
+.aboutparagraph {
+    font-size: 0.45em;
+    text-align: center;
+    width: 85%;
+    margin: auto;
+    padding-top: 2vh;
+    line-height: 3vh;
+    padding-bottom: 3vh;
+}
