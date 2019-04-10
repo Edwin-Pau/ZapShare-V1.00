@@ -74,10 +74,6 @@
                                     </div>
                                 </div>
                                 <div id="search-text-transform">
-                                    <img src="images/close.png" id="close-button">
-                                    <div id="search-text">
-                                        No Results Found
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -249,7 +245,11 @@
                                     }
                                 });
                             }
-                                
+                            function closeFunction(id) {
+                                console.log(id);
+                                let infoBox = id;
+                                id.parentNode.removeChild(infoBox);
+                            }
                             function codeAddress(geocoder, map) {
                                 var markerID = index;
                                 geocoder.geocode({'address': addressArr[index++]}, function(results, status) {
@@ -272,10 +272,19 @@
                                                             let retreivedName = jsonItem['name'];
                                                             let retreivedChargerType = jsonItem['chargerLevel'];
                                                             let retreivedConnector = jsonItem['connector'];
-                                                            document.getElementById("search-text").innerHTML = "Name: ".bold() + retreivedName + "<br> Charger Level: ".bold() + retreivedChargerType + "<br> Charger Type: ".bold() + retreivedConnector;
-                                                            document.getElementById("search-text").style.border = "1px solid black";
-                                                            document.getElementById("search-text").style.padding = "5%";
-                                                            document.getElementById("search-text").style.textAlign = "left";
+                                                            var infoBox = document.createElement("div");
+                                                            var closeButton = document.createElement("img");
+                                                            infoBox.setAttribute("class", "search-text");
+                                                            infoBox.setAttribute("id", "infoBox".concat(marker.get("id")));
+                                                            closeButton.setAttribute("class", "close-button");
+                                                            closeButton.setAttribute("src", "images/close.png");
+                                                            closeButton.setAttribute("onclick", "closeFunction(" + infoBox.getAttribute("id") + ")")
+                                                            infoBox.innerHTML = "Name: ".bold() + retreivedName + "<br> Charger Level: ".bold() + retreivedChargerType + "<br> Charger Type: ".bold() + retreivedConnector;
+                                                            infoBox.style.border = "1px solid black";
+                                                            infoBox.style.padding = "5%";
+                                                            infoBox.style.textAlign = "left";
+                                                            infoBox.appendChild(closeButton);
+                                                            document.getElementById("search-text-transform").appendChild(infoBox);
                                                         }
                                                     })
                                                 })

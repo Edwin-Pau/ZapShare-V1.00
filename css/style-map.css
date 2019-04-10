@@ -51,8 +51,9 @@
     position: relative;
     text-align: center;
     top: 15%;
+    overflow: hidden;
 }
-#search-text {
+.search-text {
     display: block;
     position: relative;
     font-size: 16pt;
@@ -81,8 +82,9 @@
     bottom: 14vh;
     color: #515151;
 }
-#close-button {
+.close-button {
     width: 5%;
     position: absolute;
-    right: 5%;
+    right: 2%;
+    top: 5%;
 }
