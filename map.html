@@ -250,16 +250,32 @@
                             }
                                 
                             function codeAddress(geocoder, map) {
+                                var markerID = index;
                                 geocoder.geocode({'address': addressArr[index++]}, function(results, status) {
                                     if (status === 'OK') {
                                         var marker = new google.maps.Marker({
                                             map: map,
-                                            position: results["0"].geometry.location
+                                            position: results["0"].geometry.location,
+                                            id: markerID
                                         });
                                         marker.addListener('click', function() {
-                                            console.log("Click");
+                                            console.log("Click" + marker.get("id"));
                                             document.getElementById("destination-input").setAttribute("value",       results["0"].formatted_address);
-                                            document.getElementById("search-text").innerHTML = results["0"].formatted_address;
+                                            firebase.auth().onAuthStateChanged(function(user){
+                                                var db = firebase.database().ref().child("hosts");
+                                                db.once('value').then(function(snapshot) {
+                                                    snapshot.forEach(function(childSnapshot) {
+                                                        let jsonItem = childSnapshot.val();
+                                                        let retreivedAddress = jsonItem['address']
+                                                        if (retreivedAddress === addressArr[marker.get("id")]) {
+                                                            let retreivedName = jsonItem['name'];
+                                                            let retreivedChargerType = jsonItem['chargerLevel'];
+                                                            let retreivedConnector = jsonItem['connector'];
+                                                            document.getElementById("search-text").innerHTML = retreivedName + "<br>" + retreivedChargerType + "<br>" + retreivedConnector;
+                                                        }
+                                                    })
+                                                })
+                                            });
                                         });
                                     } else {
                                         console.log('Geocode was not successful for the following reason: ' + status);

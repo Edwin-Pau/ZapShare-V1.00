@@ -48,7 +48,7 @@
                 <div class="loginbuttons">
                 <button id="signupbutton" class="buttonstyle" style="display: none" onclick="document.getElementById('id01').style.display='block'">Sign Up</button>
                 <button id="loginbutton" class="buttonstyle" style="display: none" onclick="document.getElementById('id01').style.display='block'">Log In</button>
-                <button id="profilebutton" class="buttonstyle" style="display: none">Profile</button> 
+                <button id="profilebutton" class="buttonstyle" style="display: none">Account</button> 
                 <button id="logoutbutton" class="buttonstyle" style="display: none">Log Out</button>
                 </div>
             </nav>
@@ -81,6 +81,10 @@
                             </div>
                         </div>
                         <div id="map"></div>
+                        
+                        <!------------------------------------------------------
+                        ------ JavaScript for Google Maps API KEEP HERE --------
+                        ------------------------------------------------------->
                         <script>
                             // Note: This example requires that you consent to location sharing when
                             // prompted by your browser. If you see the error "The Geolocation service
@@ -94,7 +98,7 @@
     
                                 // Variables for JSON object and the address string array.    
                                 var myObject = snapshot.val();
-                                addressArr = [];
+                                addressArr = [];    
                                     
                                 // Grabs the address value from each JSON object.
                                 // ----------- Puts each address into a String Array ---------- //    
@@ -246,16 +250,32 @@
                             }
                                 
                             function codeAddress(geocoder, map) {
+                                var markerID = index;
                                 geocoder.geocode({'address': addressArr[index++]}, function(results, status) {
                                     if (status === 'OK') {
                                         var marker = new google.maps.Marker({
                                             map: map,
-                                            position: results["0"].geometry.location
+                                            position: results["0"].geometry.location,
+                                            id: markerID
                                         });
                                         marker.addListener('click', function() {
-                                            console.log("Click");
+                                            console.log("Click" + marker.get("id"));
                                             document.getElementById("destination-input").setAttribute("value",       results["0"].formatted_address);
-                                            document.getElementById("search-text").innerHTML = results["0"].formatted_address;
+                                            firebase.auth().onAuthStateChanged(function(user){
+                                                var db = firebase.database().ref().child("hosts");
+                                                db.once('value').then(function(snapshot) {
+                                                    snapshot.forEach(function(childSnapshot) {
+                                                        let jsonItem = childSnapshot.val();
+                                                        let retreivedAddress = jsonItem['address']
+                                                        if (retreivedAddress === addressArr[marker.get("id")]) {
+                                                            let retreivedName = jsonItem['name'];
+                                                            let retreivedChargerType = jsonItem['chargerLevel'];
+                                                            let retreivedConnector = jsonItem['connector'];
+                                                            document.getElementById("search-text").innerHTML = retreivedName + "<br>" + retreivedChargerType + "<br>" + retreivedConnector;
+                                                        }
+                                                    })
+                                                })
+                                            });
                                         });
                                     } else {
                                         console.log('Geocode was not successful for the following reason: ' + status);
@@ -277,7 +297,7 @@
                     <div class="footercolumn">
                         <div class="footertitle">Quick Links</div>
                         <ul>
-                            <li><a href="sitemap.html">Site Map</a></li>
+                            <li><a href="">Site Map</a></li>
                         </ul>
                     </div>
 
@@ -293,7 +313,7 @@
                     <div class="footercolumn">
                         <div class="footertitle">Support</div>
                         <ul>
-                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="">FAQ</a></li>
                             <li><a href="contact.html">Contact Us</a></li>
                         </ul>
                     </div>
@@ -302,8 +322,8 @@
                         <div class="footertitle">About</div>
                         <ul>
                             <li><a href="about.html">About Us</a></li>
-                            <li><a href="team.html">Meet the Team</a></li>
-                            <li><a href="jointeam.html">Join the Team</a></li>
+                            <li><a href="">Facebook</a></li>
+                            <li><a href="">Instagram</a></li>
                         </ul>
                     </div>
                 </div>

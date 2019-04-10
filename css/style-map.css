@@ -53,6 +53,7 @@
     top: 15%;
 }
 #search-text {
+    display: block;
     position: relative;
     font-size: 16pt;
     margin-left: 10%;
