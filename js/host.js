@@ -9,6 +9,9 @@ function saveHostDetails() {
   var hostname = document.getElementById('dbhostname').value;
   var hostphone = document.getElementById('dbhostphonenum').value;
   var hostcity = document.getElementById('dbhostcity').value;
+  var chargelevel = document.getElementById('level').value;
+  var connector = document.getElementById('con').value;
+  var charinfo = document.getElementById('chargerinfo').value.trim();
 
     firebase.auth().onAuthStateChanged(function(user){
         firebase.database().ref("hosts/" + user.uid).update(
@@ -16,7 +19,10 @@ function saveHostDetails() {
         "address":hostaddress,
         "name":hostname,
         "phone":hostphone,
-        "city":hostcity
+        "city":hostcity,
+        "chargerLevel":chargelevel,
+        "connector":connector,
+        "charinfo":charinfo
         });
     });
     document.getElementById("host-details").style.display = "block";
@@ -63,6 +69,11 @@ var first = document.getElementById("dbhostname");
 	   var db = firebase.database().ref().child("hosts/"+user.uid + "/name");
 	   db.on ("value", snap => first.value = snap.val());
 });
+firebase.auth().onAuthStateChanged(function(user){
+var first = document.getElementById("hostname");
+	   var db = firebase.database().ref().child("hosts/"+user.uid + "/name");
+	   db.on ("value", snap => first.value = snap.val());
+});
 
 firebase.auth().onAuthStateChanged(function(user){
 var phone = document.getElementById("dbhostphonenum");
@@ -81,9 +92,26 @@ var city = document.getElementById("dbhostcity");
 	   var db = firebase.database().ref().child("hosts/"+user.uid + "/city");
 	   db.on ("value", snap => city.value = snap.val());
 });
+
+firebase.auth().onAuthStateChanged(function(user){
+var type = document.getElementById("level");
+	   var db = firebase.database().ref().child("hosts/"+user.uid + "/chargerLevel");
+	   db.on ("value", snap => type.value = snap.val());
+});
+
+firebase.auth().onAuthStateChanged(function(user){
+var con = document.getElementById("con");
+	   var db = firebase.database().ref().child("hosts/"+user.uid + "/connector");
+	   db.on ("value", snap => con.value = snap.val());
+});
+
+
+firebase.auth().onAuthStateChanged(function(user){
+var info = document.getElementById("chargerinfo");
+	   var db = firebase.database().ref().child("hosts/"+user.uid + "/charinfo");
+	   db.on ("value", snap => info.value = snap.val());
+});
 //--------------------------------------------------------------------
 
-function dropDownButton() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
+
 
