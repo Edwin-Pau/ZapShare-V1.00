@@ -83,6 +83,6 @@
 }
 #close-button {
     width: 5%;
-    padding-right: 3%;
-    float: right;
+    position: absolute;
+    right: 5%;
 }

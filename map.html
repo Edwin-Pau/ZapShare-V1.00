@@ -74,6 +74,7 @@
                                     </div>
                                 </div>
                                 <div id="search-text-transform">
+                                    <img src="images/close.png" id="close-button">
                                     <div id="search-text">
                                         No Results Found
                                     </div>
@@ -271,7 +272,10 @@
                                                             let retreivedName = jsonItem['name'];
                                                             let retreivedChargerType = jsonItem['chargerLevel'];
                                                             let retreivedConnector = jsonItem['connector'];
-                                                            document.getElementById("search-text").innerHTML = retreivedName + "<br>" + retreivedChargerType + "<br>" + retreivedConnector;
+                                                            document.getElementById("search-text").innerHTML = "Name: ".bold() + retreivedName + "<br> Charger Level: ".bold() + retreivedChargerType + "<br> Charger Type: ".bold() + retreivedConnector;
+                                                            document.getElementById("search-text").style.border = "1px solid black";
+                                                            document.getElementById("search-text").style.padding = "5%";
+                                                            document.getElementById("search-text").style.textAlign = "left";
                                                         }
                                                     })
                                                 })
