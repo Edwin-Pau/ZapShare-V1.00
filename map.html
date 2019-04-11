@@ -282,6 +282,7 @@
                                                             let retreivedConnector = jsonItem['connector'];
                                                             let retreivedPhone = jsonItem['phone'];
                                                             let retreivedDetails = jsonItem['charinfo'];
+                                                            let tab = "\t";
                                                             var infoBox = document.createElement("div");
                                                             var closeButton = document.createElement("img");
                                                             infoBox.setAttribute("class", "search-text");
@@ -289,7 +290,7 @@
                                                             closeButton.setAttribute("class", "close-button");
                                                             closeButton.setAttribute("src", "images/close.png");
                                                             closeButton.setAttribute("onclick", "closeFunction(" + infoBox.getAttribute("id") + ")")
-                                                            infoBox.innerHTML = "Host Name: ".bold() + retreivedName + "<br> Address: ".bold() + retreivedAddress + "<br> Charger Level: ".bold() + retreivedChargerType + "<br> Charger Type: ".bold() + retreivedConnector + "<br> Phone Number: ".bold() + retreivedPhone + "<br> Details: ".bold() + retreivedDetails;
+                                                            infoBox.innerHTML = "Host Name: ".bold() + tab + retreivedName + "<br> Address: ".bold() + retreivedAddress + "<br> Charger Level: ".bold() + retreivedChargerType + "<br> Charger Type: ".bold() + retreivedConnector + "<br> Phone Number: ".bold() + retreivedPhone + "<br> Details: ".bold() + retreivedDetails;
                                                             infoBox.style.border = "1px solid #4D4D4D";
                                                             infoBox.style.padding = "5%";
                                                             infoBox.style.textAlign = "left";
