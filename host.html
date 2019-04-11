@@ -79,7 +79,7 @@
                         <label for="conn">Connector Type</label><br>
                         <input readonly class="proinfo" id="conn" name="conn"><br> 
                         <label for="inf">Additional Info</label><br>
-                        <textarea readonly class="proinfo" id="inf" name="inf"></textarea><br>
+                        <textarea readonly id="inf" name="inf"></textarea><br>
                         <button id="editpro1" class="buttonstyle" onclick="editHostDetails()" type="button">Edit</button>
                         </form>
                         </fieldset>    
@@ -123,14 +123,13 @@
                             </select><br>
                             <label for="chargerinfo">Additional info</label><br>
                             <textarea class="newinfo" id="chargerinfo" name="hostcity"></textarea><br>
-                            <button class="buttonstyle" onclick="saveHostDetails()" type="button">Submit</button>
+                            <button id="editpro1" onclick="saveHostDetails()" type="button">Submit</button>
                             </form>
                         </fieldset>
                         </div>
                     </div>
                 </div>
             </main>
-        
             <!------------------------------------------------------
             ---------- Footer Section - Links to Subpages ----------
             ------------------------------------------------------->

@@ -6,11 +6,11 @@
 }
 
 #submit {
-  border-radius: 25px;
-  height: 40px; 
-  width: 25%;
-  outline-width: 0;
-  text-align: center;
+    border-radius: 25px;
+    height: 40px; 
+    width: 25%;
+    outline-width: 0;
+    text-align: center;
 }
 
 .newinfo {
@@ -23,6 +23,7 @@
     border-top: #32CD32;
     border-bottom: #32CD32;
 }
+
 #summary-lines {
     padding-top: 1vh;
 }
@@ -38,4 +39,3 @@ textarea {
     max-width: 50%;
     min-width: 50%;
 }
-    

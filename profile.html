@@ -12,6 +12,7 @@
         <link rel="stylesheet" type="text/css" media="screen" href="css/form.css">
         <link rel="stylesheet" type="text/css" media="screen" href="css/LoginButton.css">
         <link rel="stylesheet" type="text/css" media="screen" href="css/contactus.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="css/profileform.css">
         
             <!------------------------------------------------------
             ------------------  Sets up FireBase  ------------------
@@ -63,11 +64,11 @@
                         <fieldset>
                         <legend>Your profile</legend>
                         <form id="profile">
-                        <label for="dbfirstname">First name</label><br><input readonly class="newinfo" id="dbfirstname" name="firstname"><br>
-                        <label for="dblastname">Last name</label><br><input readonly class="newinfo" id="dblastname" name="lastname"><br>
-                        <label for="dbaddress">Address</label><br><input readonly class="newinfo" id="dbaddress" name="address"><br>
-                        <label for="dbcity">City</label><br><input readonly class="newinfo" id="dbcity" name="city"><br> 
-                        <button class="buttonstyle" onclick="editProfile()" id="editpro1" type="button">Edit</button>   
+                        <label id="infoid" for="dbfirstname">First name</label><br><input readonly class="newinfo" id="dbfirstname" name="firstname"><br>
+                        <label id="infoid" for="dblastname">Last name</label><br><input readonly class="newinfo" id="dblastname" name="lastname"><br>
+                        <label id="infoid" for="dbaddress">Address</label><br><input readonly class="newinfo" id="dbaddress" name="address"><br>
+                        <label id="infoid" for="dbcity">City</label><br><input readonly class="newinfo" id="dbcity" name="city"><br> 
+                        <button class="buttonstyle" onclick="editProfile()" id="submit" type="button">Edit</button>   
                         </form>
                         </fieldset>
                         </div>
