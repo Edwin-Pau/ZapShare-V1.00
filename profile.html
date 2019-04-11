@@ -11,8 +11,7 @@
         <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
         <link rel="stylesheet" type="text/css" media="screen" href="css/form.css">
         <link rel="stylesheet" type="text/css" media="screen" href="css/LoginButton.css">
-        <link rel="stylesheet" type="text/css" media="screen" href="css/contactus.css">
-        <link rel="stylesheet" type="text/css" media="screen" href="css/profileform.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="css/profile.css">
         
             <!------------------------------------------------------
             ------------------  Sets up FireBase  ------------------
@@ -60,19 +59,18 @@
                     </div> 
                     <div id="summary-text">
                         <div id="summary-lines">
-                        <p id="welcome">Welcome <span id="dbusername"></span></p>
+                        <p id="welcome">Welcome<span id="dbusername"></span></p>
                         <fieldset>
-                        <legend>Your profile</legend>
+                        <legend>Your Profile</legend>
                         <form id="profile">
-                        <label id="infoid" for="dbfirstname">First name</label><br><input readonly class="newinfo" id="dbfirstname" name="firstname"><br>
-                        <label id="infoid" for="dblastname">Last name</label><br><input readonly class="newinfo" id="dblastname" name="lastname"><br>
-                        <label id="infoid" for="dbaddress">Address</label><br><input readonly class="newinfo" id="dbaddress" name="address"><br>
-                        <label id="infoid" for="dbcity">City</label><br><input readonly class="newinfo" id="dbcity" name="city"><br> 
-                        <button class="buttonstyle" onclick="editProfile()" id="submit" type="button">Edit</button>   
+                        <label class="labelcol2" for="dbfirstname">First name</label><input readonly style="background-color: #f1f4f6" id="dbfirstname" name="firstname"><br>
+                        <label class="labelcol2" for="dblastname">Last name</label><input readonly style="background-color: #f1f4f6" id="dblastname" name="lastname"><br>
+                        <label class="labelcol2" for="dbaddress">Address</label><input readonly style="background-color: #f1f4f6" id="dbaddress" name="address"><br>
+                        <label class="labelcol2" for="dbcity">City</label><input readonly style="background-color: #f1f4f6" id="dbcity" name="city"><br> 
+                        <button class="profilebutton" onclick="editProfile()" id="submit" type="button">Edit Profile</button>   
                         </form>
                         </fieldset>
                         </div>
-                        
                     </div>
                 </div>
                 
@@ -89,13 +87,13 @@
                     <div id="summary-text">
                         <div id="summary-lines"> 
                         <fieldset>
-                        <legend>Your information</legend>
+                        <legend>Edit Profile Information</legend>
                         <form id="profile">
-                        <label for="firstname">First name</label><br><input class="newinfo" type="text" id="firstname" name="firstname"><br>
-                        <label for="lastname">Last name</label><br><input class="newinfo" type="text" id="lastname" name="lastname"><br>
-                        <label for="address">Address</label><br><input class="newinfo" type="text" id="address" name="address"><br>
-                        <label for="city">City</label><br><input class="newinfo" type="text" id="city" name="city"><br> 
-                        <input class="buttonstyle" id='submit' onclick="submitChanges()" type="submit">    
+                        <label class="labelcol2" for="firstname">First name</label><input type="text" id="firstname" name="firstname"><br>
+                        <label class="labelcol2" for="lastname">Last name</label><input type="text" id="lastname" name="lastname"><br>
+                        <label class="labelcol2" for="address">Address</label><input type="text" id="address" name="address"><br>
+                        <label class="labelcol2" for="city">City</label><input type="text" id="city" name="city"><br>
+                        <button class="profilebutton" onclick="submitChanges()" id="submit" type="button">Save Changes</button> 
                         </form>
                         </fieldset>
                         </div>      

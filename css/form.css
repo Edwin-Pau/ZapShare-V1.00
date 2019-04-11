@@ -5,14 +5,6 @@
     line-height: 5vh;
 }
 
-#submit {
-    border-radius: 25px;
-    height: 40px; 
-    width: 25%;
-    outline-width: 0;
-    text-align: center;
-}
-
 .newinfo {
     margin: 1vh 0;
     color: #555;
