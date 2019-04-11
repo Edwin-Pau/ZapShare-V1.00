@@ -46,7 +46,7 @@
     font-weight: 300;
     margin-left: 12px;
     padding: 0 11px 0 13px;
-    margin-bottom: 2vh;
+    margin-bottom: 3vh;
 }
 #search-text-transform {
     position: relative;
@@ -57,10 +57,11 @@
 .search-text {
     display: block;
     position: relative;
-    font-size: 16pt;
+    font-size: 0.5em;
     margin-left: 10%;
     margin-right: 10%;
     margin-bottom: 4%;
+    color: #4D4D4D;
 }
 #origin-input,
 #destination-input {
@@ -71,17 +72,17 @@
     border-color: #4d90fe;
 }
 #destination-text {
-    font-size: 10pt;
+    font-size: 0.5em;
     position: absolute;
     left: 13.5%;
-    bottom: 6.5vh;
+    bottom: 7.5vh;
     color: #515151;
 }
 #origin-text {
-    font-size: 10pt;
+    font-size: 0.5em;
     position: absolute;
     left: 13.5%;
-    bottom: 14vh;
+    bottom: 16vh;
     color: #515151;
 }
 .close-button {

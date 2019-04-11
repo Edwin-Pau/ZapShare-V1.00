@@ -27,7 +27,7 @@ window.onclick = function(event) {
   },
   // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
   signInFlow: 'popup',
-  signInSuccessUrl: 'profile.html',
+  signInSuccessUrl: 'dashboard.html',
   signInOptions: [
     //firebase.auth.GoogleAuthProvider.PROVIDER_ID,
     //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
@@ -37,7 +37,7 @@ window.onclick = function(event) {
     //firebase.auth.PhoneAuthProvider.PROVIDER_ID
   ],
   // Terms of service url.
-  tosUrl: 'tos.html',
+  tosUrl: 'terms.html',
   // Privacy policy url.
   privacyPolicyUrl: 'privacy.html'
 };

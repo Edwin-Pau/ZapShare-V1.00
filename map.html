@@ -290,9 +290,10 @@
                                                             closeButton.setAttribute("src", "images/close.png");
                                                             closeButton.setAttribute("onclick", "closeFunction(" + infoBox.getAttribute("id") + ")")
                                                             infoBox.innerHTML = "Host Name: ".bold() + retreivedName + "<br> Address: ".bold() + retreivedAddress + "<br> Charger Level: ".bold() + retreivedChargerType + "<br> Charger Type: ".bold() + retreivedConnector + "<br> Phone Number: ".bold() + retreivedPhone + "<br> Details: ".bold() + retreivedDetails;
-                                                            infoBox.style.border = "1px solid black";
+                                                            infoBox.style.border = "1px solid #4D4D4D";
                                                             infoBox.style.padding = "5%";
                                                             infoBox.style.textAlign = "left";
+                                                            infoBox.style.marginTop = "-5vh";
                                                             infoBox.appendChild(closeButton);
                                                             document.getElementById("search-text-transform").appendChild(infoBox);
                                                         }
