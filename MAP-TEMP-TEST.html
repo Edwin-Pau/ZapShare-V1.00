@@ -25,7 +25,7 @@
         <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>
         </div>
         <div class="container">
-            <img src="images/logo.png" alt="logo" id="logo2">
+            <img src="images/account.svg" alt="logo" id="logo2">
             <div id="firebaseui-auth-container"></div>
             <div id="loader">Loading...</div>  
         </div>
@@ -289,8 +289,8 @@
                                                             closeButton.setAttribute("class", "close-button");
                                                             closeButton.setAttribute("src", "images/close.png");
                                                             closeButton.setAttribute("onclick", "closeFunction(" + infoBox.getAttribute("id") + ")")
-                                                            infoBox.innerHTML = "Host Name: ".bold() + retreivedName + "<br> Address: ".bold() + retreivedAddress + "<br> Charger Level: ".bold() + retreivedChargerType + "<br> Charger Type: ".bold() + retreivedConnector + "<br> Phone Number: ".bold() + retreivedPhone + "<br> Details: ".bold() + retreivedDetails;
-                                                            infoBox.style.border = "1px solid black";
+                                                            infoBox.innerHTML = "Host Name: ".bold() + "<br>" + retreivedName + "<br> Address: ".bold() + "<br>" + retreivedAddress + "<br> Charger Level: ".bold() + "<br>" + retreivedChargerType + "<br> Charger Type: ".bold() + "<br>" + retreivedConnector + "<br> Phone Number: ".bold() + "<br>" + retreivedPhone + "<br> Details: ".bold() + "<br>" + retreivedDetails;
+                                                            infoBox.style.border = "1px solid #4D4D4D";
                                                             infoBox.style.padding = "5%";
                                                             infoBox.style.textAlign = "left";
                                                             infoBox.appendChild(closeButton);
