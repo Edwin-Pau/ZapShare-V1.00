@@ -280,6 +280,8 @@
                                                             let retreivedName = jsonItem['name'];
                                                             let retreivedChargerType = jsonItem['chargerLevel'];
                                                             let retreivedConnector = jsonItem['connector'];
+                                                            let retreivedPhone = jsonItem['phone'];
+                                                            let retreivedDetails = jsonItem['charinfo'];
                                                             var infoBox = document.createElement("div");
                                                             var closeButton = document.createElement("img");
                                                             infoBox.setAttribute("class", "search-text");
@@ -287,7 +289,7 @@
                                                             closeButton.setAttribute("class", "close-button");
                                                             closeButton.setAttribute("src", "images/close.png");
                                                             closeButton.setAttribute("onclick", "closeFunction(" + infoBox.getAttribute("id") + ")")
-                                                            infoBox.innerHTML = "Name: ".bold() + retreivedName + "<br> Charger Level: ".bold() + retreivedChargerType + "<br> Charger Type: ".bold() + retreivedConnector;
+                                                            infoBox.innerHTML = "Host Name: ".bold() + retreivedName + "<br> Address: ".bold() + retreivedAddress + "<br> Charger Level: ".bold() + retreivedChargerType + "<br> Charger Type: ".bold() + retreivedConnector + "<br> Phone Number: ".bold() + retreivedPhone + "<br> Details: ".bold() + retreivedDetails;
                                                             infoBox.style.border = "1px solid black";
                                                             infoBox.style.padding = "5%";
                                                             infoBox.style.textAlign = "left";
