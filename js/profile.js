@@ -33,37 +33,37 @@ function submitChanges() {
 firebase.auth().onAuthStateChanged(function(user){
 var name = document.getElementById("dbusername");
 	   var db = firebase.database().ref().child("users/"+user.uid + "/name");
-	   db.on ("value", snap => name.innerText = snap.val());
+	   db.on ("value", snap => name.value = snap.val());
 });
 
 firebase.auth().onAuthStateChanged(function(user){
 var name = document.getElementById("username");
 	   var db = firebase.database().ref().child("users/"+user.uid + "/name");
-	   db.on ("value", snap => name.innerText = snap.val());
+	   db.on ("value", snap => name.value = snap.val());
 });
 
 firebase.auth().onAuthStateChanged(function(user){
 var first = document.getElementById("dbfirstname");
 	   var db = firebase.database().ref().child("users/"+user.uid + "/firstname");
-	   db.on ("value", snap => first.innerText = snap.val());
+	   db.on ("value", snap => first.value = snap.val());
 });
 
 firebase.auth().onAuthStateChanged(function(user){
 var last = document.getElementById("dblastname");
 	   var db = firebase.database().ref().child("users/"+user.uid + "/lastname");
-	   db.on ("value", snap => last.innerText = snap.val());
+	   db.on ("value", snap => last.value = snap.val());
 });
 
 firebase.auth().onAuthStateChanged(function(user){
 var address = document.getElementById("dbaddress");
 	   var db = firebase.database().ref().child("users/"+user.uid + "/address");
-	   db.on ("value", snap => address.innerText = snap.val());
+	   db.on ("value", snap => address.value = snap.val());
 });
 
 firebase.auth().onAuthStateChanged(function(user){
 var city = document.getElementById("dbcity");
 	   var db = firebase.database().ref().child("users/"+user.uid + "/city");
-	   db.on ("value", snap => city.innerText = snap.val());
+	   db.on ("value", snap => city.value = snap.val());
 });
 
 //The following methods read the users info from the database into the value of the inputs.
