@@ -7,8 +7,8 @@
         <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
         <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
         <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
-        <link rel="stylesheet" type="text/css" media="screen" href="css/LoginButton.css">
         <link rel="stylesheet" type="text/css" media="screen" href="css/about.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="css/LoginButton.css">
         
             <!------------------------------------------------------
             ------------------  Sets up FireBase  ------------------
@@ -18,7 +18,7 @@
 
     <body>
             <!------------------------------------------------------
-            ----------- Pop Up Display for Login Screen  -----------
+            ----------- Div for the pop-up login screen ------------
             ------------------------------------------------------->    
             <div id="id01" class="modal">
                 <form class="modal-content animate" action="/action_page.php">
@@ -26,9 +26,9 @@
                 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>
                 </div>
                 <div class="container">
-                    <img src="images/account.svg" alt="logo" id="logo2">
-                    <div id="firebaseui-auth-container"></div>
-                    <div id="loader">Loading...</div>  
+                <img src="images/account.svg" alt="logo" id="logo2">
+                <div id="firebaseui-auth-container"></div>
+                <div id="loader">Loading...</div>  
                 </div>
                 </form>
             </div>
@@ -56,6 +56,7 @@
             </nav>
             </div>
             </header>    
+        
             <!------------------------------------------------------
             ---------- Main Section - Contents of the Page ---------
             ------------------------------------------------------->

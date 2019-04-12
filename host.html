@@ -10,7 +10,7 @@
         <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
         <link rel="stylesheet" type="text/css" media="screen" href="css/LoginButton.css">
         <link rel="stylesheet" type="text/css" media="screen" href="css/form.css">
-        <link rel="stylesheet" type="text/css" media="screen" href="css/contactus.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="css/host.css">
         
         
             <!------------------------------------------------------
@@ -66,21 +66,21 @@
                         <fieldset>
                         <legend>Your Charger Location Details</legend>
                         <form id="profile" >
-                        <label for="hostname">Host Name</label><br>
-                        <input readonly class="proinfo" id="hostname" name="hostname"><br>
-                        <label for="hostphonenum">Host Phone Number</label><br>
-                        <input readonly class="proinfo" id="hostphonenum" name="hostphonenum"><br> 
-                        <label for="hostaddress">Host Address</label><br>
-                        <input readonly class="proinfo" id="hostaddress" name="hostaddress"><br>  
-                        <label for="hostcity">Host City</label><br>
-                        <input readonly class="proinfo" id="hostcity" name="hostcity"><br>  
-                        <label for="charlev">Charger Level</label><br>
-                        <input readonly class="proinfo" id="charlev" name="charlev"><br>
-                        <label for="conn">Connector Type</label><br>
-                        <input readonly class="proinfo" id="conn" name="conn"><br> 
-                        <label for="inf">Additional Info</label><br>
-                        <textarea readonly id="inf" name="inf"></textarea><br>
-                        <button id="editpro1" class="buttonstyle" onclick="editHostDetails()" type="button">Edit</button>
+                        <label class="labelcol2" for="hostname">Host Name</label>
+                        <input readonly style="background-color: #f1f4f6" id="hostname" name="hostname"><br>
+                        <label class="labelcol2" for="hostphonenum">Phone</label>
+                        <input readonly style="background-color: #f1f4f6" id="hostphonenum" name="hostphonenum"><br> 
+                        <label class="labelcol2" for="hostaddress">Host Address</label>
+                        <input readonly style="background-color: #f1f4f6" id="hostaddress" name="hostaddress"><br> 
+                        <label class="labelcol2" for="hostcity">Host City</label>
+                        <input readonly style="background-color: #f1f4f6" id="hostcity" name="hostcity"><br>
+                        <label class="labelcol2" for="charlev">Charger Level</label>
+                        <input readonly style="background-color: #f1f4f6" id="charlev" name="charlev"><br>
+                        <label class="labelcol2" for="conn">Connector Type</label>
+                        <input readonly style="background-color: #f1f4f6" id="conn" name="conn"><br>
+                        <legend>Additional Details</legend>
+                        <textarea readonly style="background-color: #f1f4f6" id="inf" name="inf"></textarea><br>
+                        <button id="editpro1" class="profilebutton" onclick="editHostDetails()" type="button">Edit Details</button>
                         </form>
                         </fieldset>    
                         </div>
@@ -97,21 +97,21 @@
                         <fieldset>
                             <legend>Edit Your Host Location Details</legend>
                             <form id="profile">
-                            <label for="hostname">Host Name</label><br>
-                            <input class="newinfo" id="dbhostname" name="hostname"><br>
-                            <label for="hostphonenum">Host Phone Number</label><br>
-                            <input class="newinfo" id="dbhostphonenum" name="hostphonenum"><br>
-                            <label for="hostaddress">Host Address</label><br>
-                            <input class="newinfo" id="dbhostaddress" name="hostaddress"><br>
-                            <label for="hostcity">Host City</label><br>
-                            <input class="newinfo" id="dbhostcity" name="hostcity"><br>
-                            <label>Select your charger type</label><br>
+                            <label class="labelcol2" for="hostname">Host Name</label>
+                            <input id="dbhostname" name="hostname"><br>
+                            <label class="labelcol2" for="hostphonenum">Phone</label>
+                            <input id="dbhostphonenum" name="hostphonenum"><br>
+                            <label class="labelcol2" for="hostaddress">Host Address</label>
+                            <input id="dbhostaddress" name="hostaddress"><br>
+                            <label class="labelcol2" for="hostcity">Host City</label>
+                            <input id="dbhostcity" name="hostcity"><br>
+                            <label class="labelcol2" >Charger level</label>
                             <select id="level" name="Level">
                                 <option value="Level 1">Level 1 (120 volt)</option>
                                 <option value="Level 2">Level 2 (240 volt)</option> 
                                 <option value="Level 3">Level 3 (480 volt)</option> 
                             </select><br>
-                                <label>Select your connector type</label><br>
+                                <label class="labelcol2" >Connector Type</label>
                             <select id="con" name="Connector">
                                 <option value="Wall outlet">Wall outlet</option>
                                 <option value="Port J1772">Port J1772</option> 
@@ -121,9 +121,9 @@
                                 <option value="Tesla HPWC">Tesla HPWC</option> 
                                 <option value="Tesla supercharger">Tesla supercharger</option> 
                             </select><br>
-                            <label for="chargerinfo">Additional info</label><br>
-                            <textarea class="newinfo" id="chargerinfo" name="hostcity"></textarea><br>
-                            <button id="editpro1" onclick="saveHostDetails()" type="button">Submit</button>
+                            <legend>Additional Details</legend>
+                            <textarea id="chargerinfo" name="hostcity"></textarea><br>
+                            <button class="profilebutton" onclick="saveHostDetails()" id="editpro1" type="button">Save Changes</button>
                             </form>
                         </fieldset>
                         </div>

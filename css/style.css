@@ -182,17 +182,13 @@ nav a:hover {
 
 #host-details {
     width: 100%;
-    font-size: 24px;
-    line-height: 35px;
-    color: #333;
+    color: #4a4a4a;
     background-color: #f1f4f6;
 }
 
 #host-details-edit {
     width: 100%;
-    font-size: 24px;
-    line-height: 35px;
-    color: #333;
+    color: #4a4a4a;
     background-color: #f1f4f6;
     display: none;
 }
