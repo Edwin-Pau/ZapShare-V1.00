@@ -83,9 +83,10 @@ select {
 
 textarea {
     outline-color: #32CD32;
-    margin: 0;
     width: 25vw;
     height: 15vh;
+    font-size: 0.65em;
+    color: #515151;
 }
 
 form {
