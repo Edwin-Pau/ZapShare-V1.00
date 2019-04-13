@@ -1,8 +1,10 @@
+// This function displays the editable host details when it's called.
 function editHostDetails() {
   document.getElementById("host-details").style.display = "none";
   document.getElementById("host-details-edit").style.display = "block";
 }
 
+// This function saves host data and stores into the database.
 function saveHostDetails() {
   var firebase = app_firebase;
   var hostaddress = document.getElementById('dbhostaddress').value;
@@ -31,7 +33,7 @@ function saveHostDetails() {
 }
 
 
-//The following methods read the hosts info from the database.
+// The following methods read the hosts info from the database.
 firebase.auth().onAuthStateChanged(function(user){
 var first = document.getElementById("hostname");
 	   var db = firebase.database().ref().child("hosts/"+user.uid + "/name");
@@ -124,7 +126,5 @@ var info = document.getElementById("chargerinfo");
 	   var db = firebase.database().ref().child("hosts/"+user.uid + "/charinfo");
 	   db.on ("value", snap => info.value = snap.val());
 });
-//--------------------------------------------------------------------
-
 
 

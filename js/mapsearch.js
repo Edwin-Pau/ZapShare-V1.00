@@ -1,3 +1,4 @@
+// JavaScript for map functionality.
 firebase.auth().onAuthStateChanged(function(user){
     
 var db = firebase.database().ref().child("hosts");

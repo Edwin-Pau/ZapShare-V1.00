@@ -12,27 +12,15 @@
         <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.1.1/firebaseui.css" />
         <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
         <link rel="stylesheet" type="text/css" media="screen" href="css/LoginButton.css">
-                    <!------------------------------------------------------
-                    ------------------  Sets up FireBase  ------------------
-                    ------------------------------------------------------->
-                    <script src="js/setup_firebase.js"></script>
+        <!------------------------------------------------------
+        ------------------  Sets up FireBase  ------------------
+        ------------------------------------------------------->
+        <script src="js/setup_firebase.js"></script>
     </head>
 
-    <body>  
-    <div id="id01" class="modal">
-        <form class="modal-content animate" action="/action_page.php">
-        <div class="imgcontainer">
-        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>
-        </div>
-        <div class="container">
-            <img src="images/account.svg" alt="logo" id="logo2">
-            <div id="firebaseui-auth-container"></div>
-            <div id="loader">Loading...</div>  
-        </div>
-        </form>
-    </div>
+    <body>
             <!------------------------------------------------------
-            ----------- Header Section Including the Nav Bar  ------
+            ----------- Header Section Including the Nav Bar -------
             ------------------------------------------------------->
             <header>
             <div id="navbar">
@@ -82,7 +70,7 @@
                         <div id="map"></div>
                         
                         <!------------------------------------------------------
-                        ------ JavaScript for Google Maps API KEEP HERE --------
+                        ----- JavaScript for Google Maps API DO NOT MOVE -------
                         ------------------------------------------------------->
                         <script>
                             // Note: This example requires that you consent to location sharing when
@@ -151,9 +139,7 @@
                                                       'Error: Your browser doesn\'t support geolocation.');
                                 infoWindow.open(map);
                             }
-                            // This example requires the Places library. Include the libraries=places
-                            // parameter when you first load the API. For example:
-
+                            
                             /**
                             * @constructor
                             */
@@ -170,17 +156,17 @@
                                 var destinationInput = document.getElementById('destination-input');
 
                                 var originAutocomplete = new google.maps.places.Autocomplete(originInput);
-                                // Specify just the place data fields that you need.
+                                // Specify the place data fields.
                                 originAutocomplete.setFields(['place_id']);
                                 
                                 var destinationAutocomplete =
                                     new google.maps.places.Autocomplete(destinationInput);
-                                // Specify just the place data fields that you need.
+                                // Specify the place data fields.
                                 destinationAutocomplete.setFields(['place_id']);
                                 this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
                                 this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
                             }
-
+                            
                             AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function(
                             autocomplete, mode) {
                                 var me = this;
@@ -222,6 +208,7 @@
                                         }
                                     });
                             };
+                            
                             function geocodeLatLng(geocoder, map) {
                                 var input = positionVar;
                                 var latlngStr = input.split(',', 2);
@@ -310,7 +297,6 @@
                     </div>
                 </div>
         </main>
-            
         
             <!------------------------------------------------------
             ---------- Footer Section - Links to Subpages ----------
@@ -375,7 +361,7 @@
                 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close">&times;</span>
                 </div>
                 <div class="container">
-                <img src="images/logo.png" alt="logo" id="logo2">
+                <img src="images/account.svg" alt="logo" id="logo2">
                 <div id="firebaseui-auth-container"></div>
                 <div id="loader">Loading...</div>  
                 </div>

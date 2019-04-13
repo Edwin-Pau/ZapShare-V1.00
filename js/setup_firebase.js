@@ -1,3 +1,4 @@
+// Code snippet from Firebase for setting up web app.
 (function(){  
 
   var config = {

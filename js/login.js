@@ -1,13 +1,12 @@
 (function(){  
 var modal = document.getElementById('id01');
 
+// This is the JavaScript to display the modal which contains our login functionality.
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
 }
-
-
 
 // Initialize the FirebaseUI Widget using Firebase.
     var ui = new firebaseui.auth.AuthUI(firebase.auth());
